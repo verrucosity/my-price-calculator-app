@@ -7,7 +7,7 @@ const PriceCalculator = () => {
   const [finalPrice, setFinalPrice] = useState(0);
 
   const vendors = [
-    { name: "Select a vendor", value: "1" },
+    { name: "Select a vendor", value: "0" },
     { name: "A.N.T Nursery", value: "3.09" },
     { name: "Alexander Hay Greenhouses", value: "3.09" },
     { name: "Arett Sales (General)", value: "2.06" },
