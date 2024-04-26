@@ -20,7 +20,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://verrucosity.github.io/my-price-calculator-app",
+  "homepage": "https://verrucosity.github.io/my-price-calculator-app/",
   "eslintConfig": {
     "extends": [
       "react-app",
