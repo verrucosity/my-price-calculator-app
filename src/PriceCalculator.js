@@ -5,55 +5,15 @@ const PriceCalculator = () => {
     const [finalPrice, setFinalPrice] = useState('0.00');
     const [isRetail, setIsRetail] = useState(false);
     const [gallonSize, setGallonSize] = useState('1');
+    const [vendor, setVendor] = useState('1');
+    const [copied, setCopied] = useState(false);
+    const [error, setError] = useState('');
 
-<<<<<<< HEAD
-  const vendors = [
-    { name: "Select a vendor", value: "0" },
-    { name: "A.N.T Nursery", value: "3.09" },
-    { name: "Alexander Hay Greenhouses", value: "3.09" },
-    { name: "Amazon", value: "3.175" },
-    { name: "Arett Sales (General)", value: "2.06" },
-    { name: "Arett Sales (Holiday)", value: "2.3175" },
-    { name: "Arett Sales (Pottery)", value: "2.3175" },
-    { name: "Chief Mountain Farms", value: "3.8625" },
-    { name: "Cornell's True Value", value: "1.545" },
-    { name: "Crescent Gardens (Pottery)", value: "2.575" },
-    { name: "De Groot & Sons", value: "3.09" },
-    { name: "Dean's Evergreen's", value: "3.09" },
-    { name: "Digging Dog Nursery", value: "3.8625" },
-    { name: "Edgar Joyce Nursery", value: "3.605" },
-    { name: "Emma's Garden", value: "3.09" },
-    { name: "Eshraghi Nurseries, LLC.", value: "3.09" },
-    { name: "Fernbrook", value: "3.09" },
-    { name: "Glover Perennials", value: "3.09" },
-    { name: "Hardscrabble Farms (Zino Nursery)", value: "2.575" },
-    { name: "Home Depot", value: "1.545" },
-    { name: "Howe Product (Soils, Mulchs, etc.)", value: "3.605" },
-    { name: "Johnson Farms", value: "3.09" },
-    { name: "Kurt Lee (Ribbons)", value: "3.09" },
-    { name: "Lowe's", value: "1.545" },
-    { name: "Massarelli's", value: "2.06" },
-    { name: "McEnroe Farms", value: "3.09" },
-    { name: "Mindful Source Pottery (ECOPOTS)", value: "2.575" },
-    { name: "Napco", value: "3.09" },
-    { name: "Netherland Bulb", value: "2.575" },
-    { name: "Perennial Farm", value: "3.605" },
-    { name: "Plainview Growers", value: "3.09" },
-    { name: "Pride's Corner Farms", value: "3.09" },
-    { name: "Prospero Farms", value: "2.3175" },
-    { name: "Tuckahoe Nursery", value: "4.12" },
-    { name: "Van Vugt Greenhouses", value: "3.09" },
-    { name: "Van Wingerden Kenneth Greenhouses", value: "3.09" },
-    { name: "Van Wingerden Greenhouses", value: "3.09" },
-    { name: "Digging Dog Nursery (Plugs)", value: "3.605" }
-  ];
-=======
     const MIN_PRICES = {
-        '1': 22.99, // Minimum price for 1 gallon perennials for retail
-        '2': 25.99, // Replace with your actual 2-gallon minimum price for retail
-        '3': 30.99  // Replace with your actual 3-gallon minimum price for retail
+        '1': 23.99, // Minimum price for 1 gallon perennials for retail
+        '2': 26.99, // 2-gallon minimum price for retail
+        '3': 31.99  // 3-gallon minimum price for retail
     };
->>>>>>> dd35281698946cf0c4db922f0da215ad7be7bf99
 
     const vendors = [
         { name: "Select a vendor", value: "1" },
@@ -98,27 +58,43 @@ const PriceCalculator = () => {
 
     const handleBasePriceChange = (e) => {
         setBasePrice(e.target.value);
-        calculateFinalPrice(e.target.value, document.getElementById('vendorSelect').value, isRetail, gallonSize);
+        setError('');
+        calculateFinalPrice(e.target.value, vendor, isRetail, gallonSize);
     };
 
     const handleVendorChange = (e) => {
+        setVendor(e.target.value);
+        setError('');
         calculateFinalPrice(basePrice, e.target.value, isRetail, gallonSize);
     };
 
     const handleGallonSizeChange = (e) => {
         setGallonSize(e.target.value);
-        calculateFinalPrice(basePrice, document.getElementById('vendorSelect').value, isRetail, e.target.value);
+        setError('');
+        calculateFinalPrice(basePrice, vendor, isRetail, e.target.value);
     };
 
     const handleIsRetailChange = (e) => {
         setIsRetail(e.target.checked);
+        setError('');
         if (!e.target.checked) {
             setGallonSize('1'); // Reset gallon size if not retail
         }
-        calculateFinalPrice(basePrice, document.getElementById('vendorSelect').value, e.target.checked, gallonSize);
+        calculateFinalPrice(basePrice, vendor, e.target.checked, gallonSize);
     };
 
     const calculateFinalPrice = (base, multiplier, retail, size) => {
+        if (!base || parseFloat(base) <= 0) {
+            setFinalPrice('0.00');
+            return;
+        }
+
+        if (multiplier === '1') {
+            setError('Please select a vendor');
+            setFinalPrice('0.00');
+            return;
+        }
+
         let price = parseFloat(base) * parseFloat(multiplier);
         price = Math.ceil(price) - 0.01; // Round up to the nearest whole number and subtract one penny
 
@@ -127,12 +103,30 @@ const PriceCalculator = () => {
             price = MIN_PRICES[size];
         }
 
-        setFinalPrice(price.toFixed(2)); // Format the price to 2 decimal places
+        setFinalPrice(price.toFixed(2));
+        setError('');
+    };
+
+    const handleReset = () => {
+        setBasePrice('');
+        setFinalPrice('0.00');
+        setIsRetail(false);
+        setGallonSize('1');
+        setVendor('1');
+        setError('');
+        setCopied(false);
+    };
+
+    const handleCopyToClipboard = () => {
+        navigator.clipboard.writeText(finalPrice);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
     };
 
     return (
         <div>
             <h1>Price Calculator</h1>
+            {error && <p style={{ color: 'red', fontWeight: 'bold' }}>{error}</p>}
             <div>
                 <label>Enter Base Price:</label>
                 <input
@@ -140,14 +134,15 @@ const PriceCalculator = () => {
                     value={basePrice}
                     onChange={handleBasePriceChange}
                     placeholder="Base Price"
+                    min="0"
                 />
             </div>
             <div>
                 <label>Select a vendor:</label>
-                <select id="vendorSelect" onChange={handleVendorChange}>
-                    {vendors.map((vendor, index) => (
-                        <option key={index} value={vendor.value}>
-                            {vendor.name}
+                <select value={vendor} onChange={handleVendorChange}>
+                    {vendors.map((v, index) => (
+                        <option key={index} value={v.value}>
+                            {v.name}
                         </option>
                     ))}
                 </select>
@@ -172,7 +167,11 @@ const PriceCalculator = () => {
                     </select>
                 </div>
             )}
-            <p>Final Price: ${finalPrice}</p>
+            <p style={{ fontSize: '1.3em', fontWeight: 'bold' }}>Final Price: ${finalPrice}</p>
+            <div style={{ marginTop: '15px' }}>
+                <button onClick={handleCopyToClipboard}>{copied ? 'Copied!' : 'Copy Price'}</button>
+                <button onClick={handleReset} style={{ marginLeft: '10px' }}>Reset</button>
+            </div>
         </div>
     );
 };
