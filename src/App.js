@@ -1,14 +1,40 @@
 // App.js
 
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
-import PriceCalculator from './PriceCalculator'; // Make sure this path is correct based on where you save the component
+import PriceCalculator from './PriceCalculator';
+import PlantCareReference from './PlantCareReference';
 
 function App() {
+  const [activeTab, setActiveTab] = useState('calculator');
+
   return (
     <div className="App">
       <header className="App-header">
-        <PriceCalculator />
+        <div className="header-content">
+          <h1 className="app-title">Nature's Cradle Toolbox</h1>
+          <p className="app-subtitle">Business Tools & Plant Care Resources</p>
+        </div>
+
+        <div className="tabs-container">
+          <button 
+            className={`tab-button ${activeTab === 'calculator' ? 'active' : ''}`}
+            onClick={() => setActiveTab('calculator')}
+          >
+            💰 Price Calculator
+          </button>
+          <button 
+            className={`tab-button ${activeTab === 'plants' ? 'active' : ''}`}
+            onClick={() => setActiveTab('plants')}
+          >
+            🌿 Plant Care Guide
+          </button>
+        </div>
+
+        <div className="tab-content">
+          {activeTab === 'calculator' && <PriceCalculator />}
+          {activeTab === 'plants' && <PlantCareReference />}
+        </div>
       </header>
     </div>
   );

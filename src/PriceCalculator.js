@@ -124,9 +124,9 @@ const PriceCalculator = () => {
     };
 
     return (
-        <div>
+        <div className="price-calculator-container">
             <h1>Price Calculator</h1>
-            {error && <p style={{ color: 'red', fontWeight: 'bold' }}>{error}</p>}
+            {error && <p className="error-message">{error}</p>}
             <div>
                 <label>Enter Base Price:</label>
                 <input
@@ -167,10 +167,10 @@ const PriceCalculator = () => {
                     </select>
                 </div>
             )}
-            <p style={{ fontSize: '1.3em', fontWeight: 'bold' }}>Final Price: ${finalPrice}</p>
-            <div style={{ marginTop: '15px' }}>
-                <button onClick={handleCopyToClipboard}>{copied ? 'Copied!' : 'Copy Price'}</button>
-                <button onClick={handleReset} style={{ marginLeft: '10px' }}>Reset</button>
+            <p className="final-price">Final Price: ${finalPrice}</p>
+            <div className="button-group">
+                <button onClick={handleCopyToClipboard}>{copied ? '✓ Copied!' : 'Copy Price'}</button>
+                <button onClick={handleReset}>Reset</button>
             </div>
         </div>
     );
