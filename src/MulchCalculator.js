@@ -5,7 +5,6 @@ const MulchCalculator = () => {
     const [width, setWidth] = useState('');
     const [depth, setDepth] = useState('');
     const [unit, setUnit] = useState('feet');
-    const [error, setError] = useState('');
 
     // Bag sizes in cubic feet
     const bagSizes = [
@@ -16,9 +15,8 @@ const MulchCalculator = () => {
         { size: 'Yard', cubicFeet: 27, label: 'Cubic Yard' }
     ];
 
-    const calculateBags = () => {
+    const getCalculation = () => {
         if (!length || !width || !depth) {
-            setError('Please enter all measurements');
             return null;
         }
 
@@ -27,7 +25,6 @@ const MulchCalculator = () => {
         let d = parseFloat(depth);
 
         if (l <= 0 || w <= 0 || d <= 0) {
-            setError('All measurements must be greater than 0');
             return null;
         }
 
@@ -48,26 +45,22 @@ const MulchCalculator = () => {
             bagsNeeded: Math.ceil(cubicFeet / bag.cubicFeet)
         }));
 
-        setError('');
         return { cubicFeet, cubicYards, results };
     };
 
-    const calculation = calculateBags();
+    const calculation = getCalculation();
 
     const handleReset = () => {
         setLength('');
         setWidth('');
         setDepth('');
         setUnit('feet');
-        setError('');
     };
 
     return (
         <div className="mulch-calculator-container">
             <h1>🪴 Mulch/Soil Calculator</h1>
             <p className="subtitle">Calculate how much mulch or soil you need, then see bag options</p>
-
-            {error && <p className="error-message">{error}</p>}
 
             <div className="calc-section">
                 <h2>Measurements</h2>
