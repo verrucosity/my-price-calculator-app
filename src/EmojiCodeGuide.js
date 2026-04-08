@@ -75,21 +75,20 @@ const EmojiCodeGuide = () => {
             codes.forEach((code, index) => {
                 const key = `${category}-${index}`;
                 if (selectedCodes[key]) {
-                    textToCopy += `${code.emoji} ${code.name}: ${code.description}\n`;
+                    textToCopy += code.emoji + ' ';
                 }
             });
         });
 
         if (textToCopy) {
-            navigator.clipboard.writeText(textToCopy);
+            navigator.clipboard.writeText(textToCopy.trim());
             setCopied(true);
             setTimeout(() => setCopied(false), 2000);
         }
     };
 
     const copySingleCode = (emoji, name, description) => {
-        const text = `${emoji} ${name}: ${description}`;
-        navigator.clipboard.writeText(text);
+        navigator.clipboard.writeText(emoji);
         setCopied(true);
         setTimeout(() => setCopied(false), 1500);
     };
