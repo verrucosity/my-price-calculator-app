@@ -723,6 +723,18 @@ button:hover {
   margin-bottom: 10px;
 }
 
+.bags-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.bags-needed-value {
+  font-size: 0.85em;
+  color: #666;
+  text-align: center;
+}
+
 .bags-count {
   color: white;
   background-color: #2a5934;

@@ -42,7 +42,7 @@ const MulchCalculator = () => {
         // Calculate bags needed for each size
         const results = bagSizes.map(bag => ({
             ...bag,
-            bagsNeeded: Math.ceil(cubicFeet / bag.cubicFeet)
+            bagsNeeded: (cubicFeet / bag.cubicFeet).toFixed(2)
         }));
 
         return { cubicFeet, cubicYards, results };
@@ -144,7 +144,10 @@ const MulchCalculator = () => {
                                 <div key={idx} className="bag-option">
                                     <div className="bag-size">{result.size}</div>
                                     <div className="bag-label">{result.label}</div>
-                                    <div className="bags-count">{result.bagsNeeded} bags</div>
+                                    <div className="bags-info">
+                                        <div className="bags-needed-value">{result.bagsNeeded}</div>
+                                        <div className="bags-count">{Math.ceil(result.bagsNeeded)} bags</div>
+                                    </div>
                                 </div>
                             ))}
                         </div>
