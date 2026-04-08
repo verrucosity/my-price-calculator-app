@@ -594,7 +594,8 @@ button:hover {
   }
   
   input, select, button {
-    padding: 8px;
+    padding: 12px;
+    font-size: 16px;
   }
   
   .filter-buttons {
@@ -607,25 +608,153 @@ button:hover {
 
   .code-controls {
     flex-direction: column;
+    gap: 8px;
   }
 
   .control-btn,
   .copy-all-btn {
     width: 100%;
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .selected-count {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
   }
 
   .codes-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 12px;
   }
 
   .code-item {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    padding: 12px;
+    gap: 8px;
   }
 
   .code-emoji {
-    font-size: 3em;
+    font-size: 2.8em;
     width: 100%;
+    margin-bottom: 5px;
+  }
+
+  .code-name {
+    font-size: 0.95em;
+  }
+
+  .code-description {
+    font-size: 0.8em;
+  }
+
+  .copy-btn {
+    font-size: 1.4em;
+    padding: 8px;
+  }
+
+  .code-section h2 {
+    font-size: 1.3em;
+    padding-bottom: 8px;
+  }
+
+  .emoji-code-container {
+    padding: 15px;
+  }
+
+  .emoji-code-container h1 {
+    font-size: 1.6em;
+    margin-bottom: 8px;
+  }
+
+  .emoji-code-container .subtitle {
+    font-size: 0.95em;
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 360px) {
+  .app-title {
+    font-size: 1.3em;
+  }
+
+  .app-subtitle {
+    font-size: 0.9em;
+  }
+
+  .tab-button {
+    padding: 10px 12px;
+    font-size: 0.9em;
+  }
+
+  .codes-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 10px;
+  }
+
+  .code-item {
+    padding: 10px;
+  }
+
+  .code-emoji {
+    font-size: 2.4em;
+    min-width: auto;
+    margin-bottom: 3px;
+  }
+
+  .code-checkbox {
+    margin-top: 3px;
+  }
+
+  .code-checkbox input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+  }
+
+  .code-name {
+    font-size: 0.9em;
+    margin-bottom: 3px;
+  }
+
+  .code-description {
+    font-size: 0.75em;
+    line-height: 1.2;
+  }
+
+  .copy-btn {
+    font-size: 1.2em;
+  }
+
+  input, select, button {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .control-btn,
+  .copy-all-btn {
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  .code-section {
+    padding: 12px;
+    margin-bottom: 15px;
+  }
+
+  .code-section h2 {
+    font-size: 1.1em;
+    margin-bottom: 12px;
+  }
+
+  .emoji-code-container {
+    padding: 12px;
+  }
+
+  .emoji-code-container h1 {
+    font-size: 1.4em;
+    margin-bottom: 6px;
   }
 }
