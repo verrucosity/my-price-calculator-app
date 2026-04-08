@@ -5,6 +5,7 @@ import './App.css';
 import PriceCalculator from './PriceCalculator';
 import PlantCareReference from './PlantCareReference';
 import EmojiCodeGuide from './EmojiCodeGuide';
+import MulchCalculator from './MulchCalculator';
 
 function App() {
   const [activeTab, setActiveTab] = useState('calculator');
@@ -25,6 +26,12 @@ function App() {
             💰 Price Calculator
           </button>
           <button 
+            className={`tab-button ${activeTab === 'mulch' ? 'active' : ''}`}
+            onClick={() => setActiveTab('mulch')}
+          >
+            🪴 Mulch Calculator
+          </button>
+          <button 
             className={`tab-button ${activeTab === 'plants' ? 'active' : ''}`}
             onClick={() => setActiveTab('plants')}
           >
@@ -40,6 +47,7 @@ function App() {
 
         <div className="tab-content">
           {activeTab === 'calculator' && <PriceCalculator />}
+          {activeTab === 'mulch' && <MulchCalculator />}
           {activeTab === 'plants' && <PlantCareReference />}
           {activeTab === 'codes' && <EmojiCodeGuide />}
         </div>
