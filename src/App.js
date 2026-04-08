@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import './App.css';
 import PriceCalculator from './PriceCalculator';
 import PlantCareReference from './PlantCareReference';
+import EmojiCodeGuide from './EmojiCodeGuide';
 
 function App() {
   const [activeTab, setActiveTab] = useState('calculator');
@@ -29,11 +30,18 @@ function App() {
           >
             🌿 Plant Care Guide
           </button>
+          <button 
+            className={`tab-button ${activeTab === 'codes' ? 'active' : ''}`}
+            onClick={() => setActiveTab('codes')}
+          >
+            📋 Emoji Code Guide
+          </button>
         </div>
 
         <div className="tab-content">
           {activeTab === 'calculator' && <PriceCalculator />}
           {activeTab === 'plants' && <PlantCareReference />}
+          {activeTab === 'codes' && <EmojiCodeGuide />}
         </div>
       </header>
     </div>
