@@ -40,10 +40,15 @@ const MulchCalculator = () => {
         const cubicYards = cubicFeet / 27;
 
         // Calculate bags needed for each size
-        const results = bagSizes.map(bag => ({
-            ...bag,
-            bagsNeeded: (cubicFeet / bag.cubicFeet).toFixed(2)
-        }));
+        const results = bagSizes.map(bag => {
+            const bagsExact = cubicFeet / bag.cubicFeet;
+            return {
+                ...bag,
+                bagsExact: bagsExact,
+                bagsNeeded: bagsExact < 1 ? bagsExact.toFixed(2) : Math.ceil(bagsExact),
+                bagsDisplay: bagsExact < 1 ? `${bagsExact.toFixed(2)} (less than 1)` : Math.ceil(bagsExact)
+            };
+        });
 
         return { cubicFeet, cubicYards, results };
     };
@@ -145,8 +150,8 @@ const MulchCalculator = () => {
                                     <div className="bag-size">{result.size}</div>
                                     <div className="bag-label">{result.label}</div>
                                     <div className="bags-info">
-                                        <div className="bags-needed-value">{result.bagsNeeded}</div>
-                                        <div className="bags-count">{Math.ceil(result.bagsNeeded)} bags</div>
+                                        <div className="bags-needed-value">{result.bagsExact.toFixed(2)}</div>
+                                        <div className="bags-count">{result.bagsDisplay} {result.bagsExact < 1 ? '' : 'bags'}</div>
                                     </div>
                                 </div>
                             ))}
