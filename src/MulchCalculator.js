@@ -4,7 +4,7 @@ const MulchCalculator = () => {
     const [length, setLength] = useState('');
     const [width, setWidth] = useState('');
     const [depth, setDepth] = useState('');
-    const [unit, setUnit] = useState('feet');
+    const [unit, setUnit] = useState('inches');
 
     // Bag sizes in cubic feet
     const bagSizes = [
@@ -59,7 +59,7 @@ const MulchCalculator = () => {
         setLength('');
         setWidth('');
         setDepth('');
-        setUnit('feet');
+        setUnit('inches');
     };
 
     return (
