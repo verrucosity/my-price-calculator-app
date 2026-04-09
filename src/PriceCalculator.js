@@ -5,7 +5,7 @@ const PriceCalculator = () => {
     const [finalPrice, setFinalPrice] = useState('0.00');
     const [isRetail, setIsRetail] = useState(false);
     const [gallonSize, setGallonSize] = useState('1');
-    const [vendor, setVendor] = useState('1');
+    const [vendor, setVendor] = useState('0');
     const [copied, setCopied] = useState(false);
     const [error, setError] = useState('');
 
@@ -16,44 +16,44 @@ const PriceCalculator = () => {
     };
 
     const vendors = [
-        { name: "Select a vendor", value: "1" },
-        { name: "A.N.T Nursery", value: "3.09" },
-        { name: "Alexander Hay Greenhouses", value: "3.09" },
-        { name: "Arett Sales (General)", value: "2.06" },
-        { name: "Arett Sales (Holiday)", value: "2.3175" },
-        { name: "Arett Sales (Pottery)", value: "2.3175" },
-        { name: "Chief Mountain Farms", value: "3.8625" },
-        { name: "Cornell's True Value", value: "1.545" },
-        { name: "Crescent Gardens (Pottery)", value: "2.575" },
-        { name: "De Groot & Sons", value: "3.09" },
-        { name: "Dean's Evergreen's", value: "3.09" },
-        { name: "Digging Dog Nursery (Plugs)", value: "3.8625" },
-        { name: "Edgar Joyce Nursery", value: "3.605" },
-        { name: "Emma's Garden", value: "3.09" },
-        { name: "Eshraghi Nurseries, LLC.", value: "3.09" },
-        { name: "Fernbrook", value: "3.09" },
-        { name: "Glover Perennials", value: "3.09" },
-        { name: "Hardscrabble Farms (Zino Nursery)", value: "2.575" },
-        { name: "Home Depot", value: "1.545" },
-        { name: "Howe Product (Soils, Mulchs, etc.)", value: "3.605" },
-        { name: "Johnson Farms", value: "3.09" },
-        { name: "Kurt Lee (Ribbons)", value: "3.09" },
-        { name: "Lowe's", value: "1.545" },
-        { name: "Massarelli's", value: "2.06" },
-        { name: "Masonry Depot", value: "1.545" },
-        { name: "McEnroe Farms", value: "3.09" },
-        { name: "Mindful Source Pottery (ECOPOTS)", value: "2.575" },
-        { name: "Napco", value: "3.09" },
-        { name: "Netherland Bulb", value: "2.575" },
-        { name: "Perennial Farm", value: "3.605" },
-        { name: "Plainview Growers", value: "3.09" },
-        { name: "Pride's Corner Farms", value: "3.09" },
-        { name: "Prospero Farms", value: "2.3175" },
-        { name: "Sunset Farmstead", value: "3.09" },
-        { name: "Tuckahoe Nursery", value: "4.12" },
-        { name: "Van Vugt Greenhouses", value: "3.09" },
-        { name: "Van Windgerden Kenneth Greenhouses", value: "3.09" },
-        { name: "Van Wingerden Greenhouses", value: "3.09" }
+        { name: "Select a vendor", multiplier: "1" },
+        { name: "A.N.T Nursery", multiplier: "3.09" },
+        { name: "Alexander Hay Greenhouses", multiplier: "3.09" },
+        { name: "Arett Sales (General)", multiplier: "2.06" },
+        { name: "Arett Sales (Holiday)", multiplier: "2.3175" },
+        { name: "Arett Sales (Pottery)", multiplier: "2.3175" },
+        { name: "Chief Mountain Farms", multiplier: "3.8625" },
+        { name: "Cornell's True Value", multiplier: "1.545" },
+        { name: "Crescent Gardens (Pottery)", multiplier: "2.575" },
+        { name: "De Groot & Sons", multiplier: "3.09" },
+        { name: "Dean's Evergreen's", multiplier: "3.09" },
+        { name: "Digging Dog Nursery (Plugs)", multiplier: "3.8625" },
+        { name: "Edgar Joyce Nursery", multiplier: "3.605" },
+        { name: "Emma's Garden", multiplier: "3.09" },
+        { name: "Eshraghi Nurseries, LLC.", multiplier: "3.09" },
+        { name: "Fernbrook", multiplier: "3.09" },
+        { name: "Glover Perennials", multiplier: "3.09" },
+        { name: "Hardscrabble Farms (Zino Nursery)", multiplier: "2.575" },
+        { name: "Home Depot", multiplier: "1.545" },
+        { name: "Howe Product (Soils, Mulchs, etc.)", multiplier: "3.605" },
+        { name: "Johnson Farms", multiplier: "3.09" },
+        { name: "Kurt Lee (Ribbons)", multiplier: "3.09" },
+        { name: "Lowe's", multiplier: "1.545" },
+        { name: "Massarelli's", multiplier: "2.06" },
+        { name: "Masonry Depot", multiplier: "1.545" },
+        { name: "McEnroe Farms", multiplier: "3.09" },
+        { name: "Mindful Source Pottery (ECOPOTS)", multiplier: "2.575" },
+        { name: "Napco", multiplier: "3.09" },
+        { name: "Netherland Bulb", multiplier: "2.575" },
+        { name: "Perennial Farm", multiplier: "3.605" },
+        { name: "Plainview Growers", multiplier: "3.09" },
+        { name: "Pride's Corner Farms", multiplier: "3.09" },
+        { name: "Prospero Farms", multiplier: "2.3175" },
+        { name: "Sunset Farmstead", multiplier: "3.09" },
+        { name: "Tuckahoe Nursery", multiplier: "4.12" },
+        { name: "Van Vugt Greenhouses", multiplier: "3.09" },
+        { name: "Van Windgerden Kenneth Greenhouses", multiplier: "3.09" },
+        { name: "Van Wingerden Greenhouses", multiplier: "3.09" }
     ];
 
     const handleBasePriceChange = (e) => {
@@ -83,18 +83,19 @@ const PriceCalculator = () => {
         calculateFinalPrice(basePrice, vendor, e.target.checked, gallonSize);
     };
 
-    const calculateFinalPrice = (base, multiplier, retail, size) => {
+    const calculateFinalPrice = (base, vendorIndex, retail, size) => {
         if (!base || parseFloat(base) <= 0) {
             setFinalPrice('0.00');
             return;
         }
 
-        if (multiplier === '1') {
+        if (vendorIndex === '0') {
             setError('Please select a vendor');
             setFinalPrice('0.00');
             return;
         }
 
+        const multiplier = vendors[parseInt(vendorIndex)].multiplier;
         let price = parseFloat(base) * parseFloat(multiplier);
         price = Math.ceil(price) - 0.01; // Round up to the nearest whole number and subtract one penny
 
@@ -112,7 +113,7 @@ const PriceCalculator = () => {
         setFinalPrice('0.00');
         setIsRetail(false);
         setGallonSize('1');
-        setVendor('1');
+        setVendor('0');
         setError('');
         setCopied(false);
     };
@@ -141,7 +142,7 @@ const PriceCalculator = () => {
                 <label>Select a vendor:</label>
                 <select value={vendor} onChange={handleVendorChange}>
                     {vendors.map((v, index) => (
-                        <option key={index} value={v.value}>
+                        <option key={index} value={index}>
                             {v.name}
                         </option>
                     ))}
