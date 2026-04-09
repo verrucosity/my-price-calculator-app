@@ -123,7 +123,7 @@ const MulchCalculator = () => {
                             type="number"
                             value={depth}
                             onChange={(e) => setDepth(e.target.value)}
-                            placeholder="Enter depth (recommend 2-3 inches)"
+                            placeholder={unit === 'feet' ? 'Enter depth (recommend 0.17-0.25 feet)' : 'Enter depth (recommend 2-3 inches)'}
                             min="0"
                         />
                     </div>
