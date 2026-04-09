@@ -338,6 +338,41 @@ button:hover {
   color: #666;
 }
 
+.info-row p:contains('Non-toxic'),
+.info-row:has(strong:contains('Toxic')) p {
+  font-weight: 500;
+}
+
+.plant-card strong:contains('Toxic') {
+  display: flex;
+  gap: 8px;
+}
+
+.plant-card .info-row p {
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  display: inline-block;
+  width: fit-content;
+}
+
+.info-row:has(strong:contains('Toxic to Cats')) p,
+.info-row:has(strong:contains('Toxic to Dogs')) p {
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+/* Toxicity color coding */
+.plant-info .info-row:nth-last-child(-n+2) p {
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  display: inline-block;
+  background-color: #f0f0f0;
+}
+
 .no-results {
   text-align: center;
   padding: 40px 20px;

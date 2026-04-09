@@ -14,7 +14,9 @@ const PlantCareReference = () => {
             humidity: 'Average (30-50%)',
             temp: '65-75°F (18-24°C)',
             tips: 'Very forgiving. Can tolerate low light. Grows quickly. Great for beginners.',
-            difficulty: 'Easy'
+            difficulty: 'Easy',
+            toxicToCats: 'Toxic',
+            toxicToDogs: 'Toxic'
         },
         {
             id: 2,
@@ -25,7 +27,9 @@ const PlantCareReference = () => {
             humidity: 'Low to average (20-40%)',
             temp: '60-75°F (15-24°C)',
             tips: 'Extremely drought tolerant. Purifies air. Practically indestructible.',
-            difficulty: 'Easy'
+            difficulty: 'Easy',
+            toxicToCats: 'Toxic',
+            toxicToDogs: 'Toxic'
         },
         {
             id: 3,
@@ -36,7 +40,9 @@ const PlantCareReference = () => {
             humidity: 'Low to average (20-40%)',
             temp: '65-75°F (18-24°C)',
             tips: 'Tolerates neglect. Glossy leaves. Slow grower but worth it.',
-            difficulty: 'Easy'
+            difficulty: 'Easy',
+            toxicToCats: 'Toxic',
+            toxicToDogs: 'Toxic'
         },
         {
             id: 4,
@@ -47,7 +53,9 @@ const PlantCareReference = () => {
             humidity: 'High (50-70%)',
             temp: '65-75°F (18-24°C)',
             tips: 'Requires support as it grows. Aerial roots develop. Loves humidity.',
-            difficulty: 'Easy'
+            difficulty: 'Easy',
+            toxicToCats: 'Toxic',
+            toxicToDogs: 'Toxic'
         },
         {
             id: 5,
@@ -58,7 +66,9 @@ const PlantCareReference = () => {
             humidity: 'Moderate to high (40-60%)',
             temp: '65-75°F (18-24°C)',
             tips: 'Can be finicky. Avoid drafts & cold. Prefers stable location. Tall statement plant.',
-            difficulty: 'Moderate'
+            difficulty: 'Moderate',
+            toxicToCats: 'Toxic',
+            toxicToDogs: 'Toxic'
         },
         {
             id: 6,
@@ -69,7 +79,9 @@ const PlantCareReference = () => {
             humidity: 'Moderate to high (40-60%)',
             temp: '65-75°F (18-24°C)',
             tips: 'Stunning dark leaves. Grows tall. Wipe leaves monthly for shine.',
-            difficulty: 'Easy'
+            difficulty: 'Easy',
+            toxicToCats: 'Toxic',
+            toxicToDogs: 'Toxic'
         },
         {
             id: 7,
@@ -80,7 +92,9 @@ const PlantCareReference = () => {
             humidity: 'Average (30-50%)',
             temp: '55-70°F (13-21°C)',
             tips: 'Produces baby plantlets. Very hardy. Great air purifier. Perfect for hanging baskets.',
-            difficulty: 'Easy'
+            difficulty: 'Easy',
+            toxicToCats: 'Non-toxic',
+            toxicToDogs: 'Non-toxic'
         },
         {
             id: 8,
@@ -91,7 +105,9 @@ const PlantCareReference = () => {
             humidity: 'Average (30-50%)',
             temp: '65-75°F (18-24°C)',
             tips: 'Heart-shaped leaves. Climber. Easy to propagate. Similar to Pothos but different leaf shape.',
-            difficulty: 'Easy'
+            difficulty: 'Easy',
+            toxicToCats: 'Toxic',
+            toxicToDogs: 'Toxic'
         },
         {
             id: 9,
@@ -102,7 +118,9 @@ const PlantCareReference = () => {
             humidity: 'High (50-70%)',
             temp: '65-75°F (18-24°C)',
             tips: 'Blooms frequently with proper care. Water from bottom to avoid leaf spots.',
-            difficulty: 'Moderate'
+            difficulty: 'Moderate',
+            toxicToCats: 'Non-toxic',
+            toxicToDogs: 'Non-toxic'
         },
         {
             id: 10,
@@ -113,7 +131,9 @@ const PlantCareReference = () => {
             humidity: 'Moderate to high (40-60%)',
             temp: '65-75°F (18-24°C)',
             tips: 'Beautiful white flowers. Droops when thirsty (great indicator!). Air purifier.',
-            difficulty: 'Easy'
+            difficulty: 'Easy',
+            toxicToCats: 'Toxic',
+            toxicToDogs: 'Toxic'
         },
         {
             id: 11,
@@ -124,7 +144,9 @@ const PlantCareReference = () => {
             humidity: 'High (60-80%)',
             temp: '65-75°F (18-24°C)',
             tips: 'Stunning patterned leaves. Leaves move throughout day. Needs humidity. Picky about water.',
-            difficulty: 'Hard'
+            difficulty: 'Hard',
+            toxicToCats: 'Non-toxic',
+            toxicToDogs: 'Non-toxic'
         },
         {
             id: 12,
@@ -135,7 +157,9 @@ const PlantCareReference = () => {
             humidity: 'Low (10-30%)',
             temp: '60-75°F (15-24°C)',
             tips: 'Store water in leaves. Perfect for forgetful waterers. Extremely low maintenance.',
-            difficulty: 'Easy'
+            difficulty: 'Easy',
+            toxicToCats: 'Toxic',
+            toxicToDogs: 'Toxic'
         },
         {
             id: 13,
@@ -146,7 +170,9 @@ const PlantCareReference = () => {
             humidity: 'High (50-70%)',
             temp: '65-75°F (18-24°C)',
             tips: 'Blooms last months. Special potting medium needed. Prefers not to sit in water.',
-            difficulty: 'Moderate'
+            difficulty: 'Moderate',
+            toxicToCats: 'Non-toxic',
+            toxicToDogs: 'Non-toxic'
         },
         {
             id: 14,
@@ -157,7 +183,9 @@ const PlantCareReference = () => {
             humidity: 'High (60-80%)',
             temp: '60-70°F (15-21°C)',
             tips: 'Delicate fronds. Loves humidity (mist regularly). Sensitive to dry air.',
-            difficulty: 'Moderate'
+            difficulty: 'Moderate',
+            toxicToCats: 'Non-toxic',
+            toxicToDogs: 'Non-toxic'
         },
         {
             id: 15,
@@ -168,7 +196,9 @@ const PlantCareReference = () => {
             humidity: 'Average (30-50%)',
             temp: '60-75°F (15-24°C)',
             tips: 'Compact & cute. Slow grower. Toxic to pets if ingested. Great for desks.',
-            difficulty: 'Easy'
+            difficulty: 'Easy',
+            toxicToCats: 'Mildly Toxic',
+            toxicToDogs: 'Mildly Toxic'
         },
         {
             id: 16,
@@ -179,7 +209,9 @@ const PlantCareReference = () => {
             humidity: 'Low to average (20-40%)',
             temp: '60-75°F (15-24°C)',
             tips: 'Tall, architectural plant. Many varieties. Extremely tolerant. Low maintenance.',
-            difficulty: 'Easy'
+            difficulty: 'Easy',
+            toxicToCats: 'Toxic',
+            toxicToDogs: 'Toxic'
         },
         {
             id: 17,
@@ -190,7 +222,9 @@ const PlantCareReference = () => {
             humidity: 'Average (30-50%)',
             temp: '65-75°F (18-24°C)',
             tips: 'Tiny heart-shaped leaves. Great for shelves & desks. Trailing or climbing.',
-            difficulty: 'Easy'
+            difficulty: 'Easy',
+            toxicToCats: 'Toxic',
+            toxicToDogs: 'Toxic'
         },
         {
             id: 18,
@@ -201,7 +235,9 @@ const PlantCareReference = () => {
             humidity: 'Low (20-30%)',
             temp: '65-75°F (18-24°C)',
             tips: 'Unique round leaves. Drought tolerant. Perfect for hanging planters. Prefers drier conditions.',
-            difficulty: 'Moderate'
+            difficulty: 'Moderate',
+            toxicToCats: 'Non-toxic',
+            toxicToDogs: 'Non-toxic'
         },
         {
             id: 19,
@@ -212,7 +248,9 @@ const PlantCareReference = () => {
             humidity: 'High (60-80%)',
             temp: '65-80°F (18-27°C)',
             tips: 'Heart-shaped flowers (actually waxy spathes). Loves humidity. Blooms year-round.',
-            difficulty: 'Moderate'
+            difficulty: 'Moderate',
+            toxicToCats: 'Toxic',
+            toxicToDogs: 'Toxic'
         },
         {
             id: 20,
@@ -223,7 +261,9 @@ const PlantCareReference = () => {
             humidity: 'Average (30-50%)',
             temp: '65-75°F (18-24°C)',
             tips: 'Variegated white & green leaves. Same care as regular Pothos. Beautiful trailing vine.',
-            difficulty: 'Easy'
+            difficulty: 'Easy',
+            toxicToCats: 'Toxic',
+            toxicToDogs: 'Toxic'
         },
         {
             id: 21,
@@ -234,7 +274,9 @@ const PlantCareReference = () => {
             humidity: 'Moderate to high (40-60%)',
             temp: '65-75°F (18-24°C)',
             tips: 'Smaller than regular Monstera. Unique split leaves. Trailing or climbing.',
-            difficulty: 'Easy'
+            difficulty: 'Easy',
+            toxicToCats: 'Toxic',
+            toxicToDogs: 'Toxic'
         },
         {
             id: 22,
@@ -245,7 +287,9 @@ const PlantCareReference = () => {
             humidity: 'Moderate (40-60%)',
             temp: '65-75°F (18-24°C)',
             tips: 'Arrow-shaped leaves. Comes in pink, red, white varieties. Climbing or trailing.',
-            difficulty: 'Easy'
+            difficulty: 'Easy',
+            toxicToCats: 'Toxic',
+            toxicToDogs: 'Toxic'
         },
         {
             id: 23,
@@ -256,7 +300,9 @@ const PlantCareReference = () => {
             humidity: 'High (60-80%)',
             temp: '65-75°F (18-24°C)',
             tips: 'Colorful textured leaves. Many varieties. Prefers humidity. Blooms throughout year.',
-            difficulty: 'Moderate'
+            difficulty: 'Moderate',
+            toxicToCats: 'Mildly Toxic',
+            toxicToDogs: 'Mildly Toxic'
         },
         {
             id: 24,
@@ -267,7 +313,9 @@ const PlantCareReference = () => {
             humidity: 'Average (30-50%)',
             temp: '65-75°F (18-24°C)',
             tips: 'Bright neon green leaves. Same easy care as regular Pothos. Great for plant shelves.',
-            difficulty: 'Easy'
+            difficulty: 'Easy',
+            toxicToCats: 'Toxic',
+            toxicToDogs: 'Toxic'
         },
         {
             id: 25,
@@ -278,7 +326,9 @@ const PlantCareReference = () => {
             humidity: 'Low to average (20-40%)',
             temp: '50-70°F (10-21°C)',
             tips: 'Literally indestructible. Named Cast Iron for a reason. Tolerates neglect brilliantly.',
-            difficulty: 'Easy'
+            difficulty: 'Easy',
+            toxicToCats: 'Non-toxic',
+            toxicToDogs: 'Non-toxic'
         },
         {
             id: 26,
@@ -289,7 +339,9 @@ const PlantCareReference = () => {
             humidity: 'High (60-80%)',
             temp: '65-75°F (18-24°C)',
             tips: 'Incredibly colorful leaves (red, yellow, orange). Prefers stable conditions. Drops leaves if moved.',
-            difficulty: 'Hard'
+            difficulty: 'Hard',
+            toxicToCats: 'Toxic',
+            toxicToDogs: 'Toxic'
         },
         {
             id: 27,
@@ -300,7 +352,9 @@ const PlantCareReference = () => {
             humidity: 'Moderate to high (40-60%)',
             temp: '65-75°F (18-24°C)',
             tips: 'Silver-spotted heart-shaped leaves. Trailing or climbing. More humidity than regular Pothos.',
-            difficulty: 'Moderate'
+            difficulty: 'Moderate',
+            toxicToCats: 'Toxic',
+            toxicToDogs: 'Toxic'
         },
         {
             id: 28,
@@ -311,7 +365,9 @@ const PlantCareReference = () => {
             humidity: 'High (60-80%)',
             temp: '65-80°F (18-27°C)',
             tips: 'Stunning arrow-shaped leaves with prominent veins. Drama queen. Needs humidity & warmth.',
-            difficulty: 'Moderate'
+            difficulty: 'Moderate',
+            toxicToCats: 'Toxic',
+            toxicToDogs: 'Toxic'
         },
         {
             id: 29,
@@ -322,7 +378,9 @@ const PlantCareReference = () => {
             humidity: 'Low (10-30%)',
             temp: '60-75°F (15-24°C)',
             tips: 'Tiny succulent rosette. Stays small. Perfect for shelves. Very drought tolerant.',
-            difficulty: 'Easy'
+            difficulty: 'Easy',
+            toxicToCats: 'Toxic',
+            toxicToDogs: 'Toxic'
         },
         {
             id: 30,
@@ -333,7 +391,9 @@ const PlantCareReference = () => {
             humidity: 'Moderate (40-50%)',
             temp: '60-75°F (15-24°C)',
             tips: 'Unique round coin-shaped leaves. Rotates toward light. Produces pups for propagation.',
-            difficulty: 'Easy'
+            difficulty: 'Easy',
+            toxicToCats: 'Non-toxic',
+            toxicToDogs: 'Non-toxic'
         },
         {
             id: 31,
@@ -344,7 +404,9 @@ const PlantCareReference = () => {
             humidity: 'High (60-80%)',
             temp: '65-75°F (18-24°C)',
             tips: 'Leaves fold up at night (like praying hands). Beautiful patterns. Needs humidity.',
-            difficulty: 'Moderate'
+            difficulty: 'Moderate',
+            toxicToCats: 'Non-toxic',
+            toxicToDogs: 'Non-toxic'
         },
         {
             id: 32,
@@ -355,7 +417,9 @@ const PlantCareReference = () => {
             humidity: 'Average (30-50%)',
             temp: '60-75°F (15-24°C)',
             tips: 'Bright orange flowers. Long strappy leaves. Blooms in spring. Low maintenance.',
-            difficulty: 'Easy'
+            difficulty: 'Easy',
+            toxicToCats: 'Toxic',
+            toxicToDogs: 'Toxic'
         },
         {
             id: 33,
@@ -366,7 +430,9 @@ const PlantCareReference = () => {
             humidity: 'High (60-80%)',
             temp: '70-80°F (21-27°C)',
             tips: 'Beautiful pink & white flower-like spathes. May go dormant. Loves warmth & humidity.',
-            difficulty: 'Moderate'
+            difficulty: 'Moderate',
+            toxicToCats: 'Non-toxic',
+            toxicToDogs: 'Non-toxic'
         },
         {
             id: 34,
@@ -377,7 +443,9 @@ const PlantCareReference = () => {
             humidity: 'Average to high (40-60%)',
             temp: '65-75°F (18-24°C)',
             tips: 'Colorful patterned leaves. Many varieties. Very low maintenance. Great for offices.',
-            difficulty: 'Easy'
+            difficulty: 'Easy',
+            toxicToCats: 'Toxic',
+            toxicToDogs: 'Toxic'
         },
         {
             id: 35,
@@ -388,7 +456,9 @@ const PlantCareReference = () => {
             humidity: 'Average (30-50%)',
             temp: '60-75°F (15-24°C)',
             tips: 'Large umbrella-like leaves. Grows tall. Can handle some neglect. Air purifier.',
-            difficulty: 'Easy'
+            difficulty: 'Easy',
+            toxicToCats: 'Toxic',
+            toxicToDogs: 'Toxic'
         },
         {
             id: 36,
@@ -399,7 +469,9 @@ const PlantCareReference = () => {
             humidity: 'Low to average (20-40%)',
             temp: '60-75°F (15-24°C)',
             tips: 'Tiny heart-shaped leaves on trailing vines. Very drought tolerant. Perfect for hanging baskets.',
-            difficulty: 'Easy'
+            difficulty: 'Easy',
+            toxicToCats: 'Non-toxic',
+            toxicToDogs: 'Non-toxic'
         },
         {
             id: 37,
@@ -410,7 +482,9 @@ const PlantCareReference = () => {
             humidity: 'Very high (70-80%)',
             temp: '65-75°F (18-24°C)',
             tips: 'Delicate veined leaves. Wilts dramatically when thirsty. Needs consistent care & humidity.',
-            difficulty: 'Hard'
+            difficulty: 'Hard',
+            toxicToCats: 'Non-toxic',
+            toxicToDogs: 'Non-toxic'
         },
         {
             id: 38,
@@ -421,7 +495,9 @@ const PlantCareReference = () => {
             humidity: 'Low (10-30%)',
             temp: '60-75°F (15-24°C)',
             tips: 'Perfect rosette succulents. Produces beautiful flowers. Extremely drought tolerant & easy.',
-            difficulty: 'Easy'
+            difficulty: 'Easy',
+            toxicToCats: 'Non-toxic',
+            toxicToDogs: 'Non-toxic'
         },
         {
             id: 39,
@@ -432,7 +508,9 @@ const PlantCareReference = () => {
             humidity: 'Low (10-30%)',
             temp: '60-75°F (15-24°C)',
             tips: 'Long trailing stems with chubby leaves. Very drought tolerant. Fragile leaves.',
-            difficulty: 'Easy'
+            difficulty: 'Easy',
+            toxicToCats: 'Non-toxic',
+            toxicToDogs: 'Non-toxic'
         },
         {
             id: 40,
@@ -443,7 +521,9 @@ const PlantCareReference = () => {
             humidity: 'Moderate to high (40-60%)',
             temp: '65-75°F (18-24°C)',
             tips: 'Similar to Pothos but larger leaves. Develops fenestration (holes) as it matures. Stunning climber.',
-            difficulty: 'Easy'
+            difficulty: 'Easy',
+            toxicToCats: 'Toxic',
+            toxicToDogs: 'Toxic'
         },
         {
             id: 41,
@@ -454,7 +534,9 @@ const PlantCareReference = () => {
             humidity: 'Low to average (20-40%)',
             temp: '65-75°F (18-24°C)',
             tips: 'Dark glossy black leaflets. Dramatic look. Extremely easy. Toxic if ingested.',
-            difficulty: 'Easy'
+            difficulty: 'Easy',
+            toxicToCats: 'Toxic',
+            toxicToDogs: 'Toxic'
         },
         {
             id: 42,
@@ -465,7 +547,9 @@ const PlantCareReference = () => {
             humidity: 'Moderate (40-50%)',
             temp: '65-75°F (18-24°C)',
             tips: 'Waxy flowers with sweet fragrance. Trailing or climbing. Blooms regularly with proper care.',
-            difficulty: 'Easy'
+            difficulty: 'Easy',
+            toxicToCats: 'Mildly Toxic',
+            toxicToDogs: 'Mildly Toxic'
         },
         {
             id: 43,
@@ -476,7 +560,9 @@ const PlantCareReference = () => {
             humidity: 'Moderate to high (40-60%)',
             temp: '65-75°F (18-24°C)',
             tips: 'Looks like Monstera but smaller! Fenestrated leaves. Climbing vines. Stunning addition.',
-            difficulty: 'Easy'
+            difficulty: 'Easy',
+            toxicToCats: 'Toxic',
+            toxicToDogs: 'Toxic'
         },
         {
             id: 44,
@@ -487,7 +573,9 @@ const PlantCareReference = () => {
             humidity: 'Moderate (40-50%)',
             temp: '65-75°F (18-24°C)',
             tips: 'Watermelon-patterned leaves. Trailing or climbing. Prefers humidity. Rare & unique.',
-            difficulty: 'Moderate'
+            difficulty: 'Moderate',
+            toxicToCats: 'Toxic',
+            toxicToDogs: 'Toxic'
         },
         {
             id: 45,
@@ -498,7 +586,9 @@ const PlantCareReference = () => {
             humidity: 'Low to average (20-40%)',
             temp: '60-75°F (15-24°C)',
             tips: 'Bright clusters of tiny flowers. Blooms in winter. Needs cool temps to trigger blooming.',
-            difficulty: 'Easy'
+            difficulty: 'Easy',
+            toxicToCats: 'Toxic',
+            toxicToDogs: 'Toxic'
         },
         {
             id: 46,
@@ -509,7 +599,9 @@ const PlantCareReference = () => {
             humidity: 'Moderate to high (40-60%)',
             temp: '65-75°F (18-24°C)',
             tips: 'Blue-ish silvery foliage. Climbing vines. Develops fenestration. Rare houseplant.',
-            difficulty: 'Moderate'
+            difficulty: 'Moderate',
+            toxicToCats: 'Toxic',
+            toxicToDogs: 'Toxic'
         },
         {
             id: 47,
@@ -520,7 +612,9 @@ const PlantCareReference = () => {
             humidity: 'High (60-80%)',
             temp: '65-75°F (18-24°C)',
             tips: 'Large sculptural leaves. Makes a statement. Slower grower. Needs humidity.',
-            difficulty: 'Moderate'
+            difficulty: 'Moderate',
+            toxicToCats: 'Non-toxic',
+            toxicToDogs: 'Non-toxic'
         },
         {
             id: 48,
@@ -531,7 +625,9 @@ const PlantCareReference = () => {
             humidity: 'Moderate (40-50%)',
             temp: '65-75°F (18-24°C)',
             tips: 'Compact with coin-shaped leaflets. Trailing or upright. Forgiving & attractive.',
-            difficulty: 'Easy'
+            difficulty: 'Easy',
+            toxicToCats: 'Non-toxic',
+            toxicToDogs: 'Non-toxic'
         }
     ];
 
@@ -610,6 +706,14 @@ const PlantCareReference = () => {
                                 <div className="info-row">
                                     <strong>✨ Tips:</strong>
                                     <p className="tips">{plant.tips}</p>
+                                </div>
+                                <div className="info-row">
+                                    <strong>🐱 Toxic to Cats:</strong>
+                                    <p>{plant.toxicToCats}</p>
+                                </div>
+                                <div className="info-row">
+                                    <strong>🐕 Toxic to Dogs:</strong>
+                                    <p>{plant.toxicToDogs}</p>
                                 </div>
                             </div>
                         </div>
