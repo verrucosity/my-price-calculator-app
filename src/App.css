@@ -213,11 +213,68 @@ button:hover {
   outline: none;
 }
 
+/* Quick Filter Pills */
+.quick-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 15px;
+  justify-content: center;
+}
+
+.quick-filter-pill {
+  padding: 10px 16px;
+  border: none;
+  background-color: #f0f8f3;
+  color: #2a5934;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  font-size: 0.85em;
+  border: 2px solid #89a47f;
+}
+
+.quick-filter-pill:hover {
+  background-color: #e0f0e8;
+  border-color: #2a5934;
+}
+
+.quick-filter-pill.active {
+  background-color: #2a5934;
+  color: white;
+  border-color: #2a5934;
+}
+
+/* Multi-Select Filter Groups */
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 15px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.filter-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.filter-section label {
+  font-weight: 600;
+  color: #2a5934;
+  font-size: 0.9em;
+}
+
 .filter-buttons {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .filter-btn {
@@ -241,11 +298,34 @@ button:hover {
   border-color: #2a5934;
 }
 
+.reset-filters-btn {
+  padding: 10px 20px;
+  background-color: #f0f8f3;
+  border: 2px solid #89a47f;
+  color: #2a5934;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+  margin-top: 10px;
+}
+
+.reset-filters-btn:hover {
+  background-color: #e0f0e8;
+  border-color: #2a5934;
+}
+
 .results-info {
   text-align: center;
   color: #666;
   margin-bottom: 20px;
   font-size: 0.95em;
+}
+
+.active-filter-count {
+  font-weight: 600;
+  color: #2a5934;
 }
 
 .plants-grid {
@@ -878,12 +958,35 @@ button:hover {
     padding: 12px;
     font-size: 16px;
   }
-  
+
+  /* Plant Care Mobile Optimizations */
+  .quick-filters {
+    flex-direction: column;
+  }
+
+  .quick-filter-pill {
+    width: 100%;
+  }
+
+  .filter-group {
+    gap: 10px;
+  }
+
+  .filter-section {
+    gap: 8px;
+  }
+
   .filter-buttons {
     flex-direction: column;
+    gap: 8px;
   }
   
   .filter-btn {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .reset-filters-btn {
     width: 100%;
   }
 

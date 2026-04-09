@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 
 const PlantCareReference = () => {
     const [searchTerm, setSearchTerm] = useState('');
-    const [filterCategory, setFilterCategory] = useState('all');
+    const [lightFilter, setLightFilter] = useState('all');
+    const [difficultyFilter, setDifficultyFilter] = useState('all');
+    const [toxicityFilter, setToxicityFilter] = useState('all'); // 'all', 'non-toxic', 'toxic'
 
     const plants = [
         {
@@ -632,16 +634,54 @@ const PlantCareReference = () => {
     ];
 
     const filteredPlants = plants.filter(plant => {
-        const matchesSearch = plant.name.toLowerCase().includes(searchTerm.toLowerCase());
-        const matchesCategory = filterCategory === 'all' || plant.category === filterCategory;
-        return matchesSearch && matchesCategory;
+        const matchesSearch = plant.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                            plant.tips.toLowerCase().includes(searchTerm.toLowerCase());
+        
+        const matchesLight = lightFilter === 'all' || plant.category === lightFilter;
+        
+        const matchesDifficulty = difficultyFilter === 'all' || plant.difficulty === difficultyFilter;
+        
+        const matchesToxicity = toxicityFilter === 'all' || 
+                               (toxicityFilter === 'non-toxic' && plant.toxicToCats === 'Non-toxic' && plant.toxicToDogs === 'Non-toxic') ||
+                               (toxicityFilter === 'toxic' && (plant.toxicToCats !== 'Non-toxic' || plant.toxicToDogs !== 'Non-toxic'));
+        
+        return matchesSearch && matchesLight && matchesDifficulty && matchesToxicity;
     });
+
+    const hasActiveFilters = lightFilter !== 'all' || difficultyFilter !== 'all' || toxicityFilter !== 'all' || searchTerm !== '';
+
+    const resetFilters = () => {
+        setSearchTerm('');
+        setLightFilter('all');
+        setDifficultyFilter('all');
+        setToxicityFilter('all');
+    };
+
+    const applyQuickFilter = (lightVal, diffVal, toxVal) => {
+        setLightFilter(lightVal);
+        setDifficultyFilter(diffVal);
+        setToxicityFilter(toxVal);
+        setSearchTerm('');
+    };
 
     const categories = [
         { value: 'all', label: 'All Plants' },
         { value: 'low-light', label: '🌑 Low Light' },
         { value: 'moderate-light', label: '🌤️ Moderate Light' },
         { value: 'bright-light', label: '☀️ Bright Light' }
+    ];
+
+    const difficulties = [
+        { value: 'all', label: 'Any Difficulty' },
+        { value: 'Easy', label: '✅ Easy' },
+        { value: 'Moderate', label: '⚠️ Moderate' },
+        { value: 'Hard', label: '🔥 Hard' }
+    ];
+
+    const toxicityOptions = [
+        { value: 'all', label: 'Any Toxicity' },
+        { value: 'non-toxic', label: '🟢 Pet-Safe (Non-toxic)' },
+        { value: 'toxic', label: '🔴 Toxic to Pets' }
     ];
 
     return (
@@ -652,27 +692,93 @@ const PlantCareReference = () => {
             <div className="control-panel">
                 <input
                     type="text"
-                    placeholder="Search by plant name..."
+                    placeholder="Search by plant name or keywords..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                     className="search-input"
                 />
 
-                <div className="filter-buttons">
-                    {categories.map((cat) => (
-                        <button
-                            key={cat.value}
-                            className={`filter-btn ${filterCategory === cat.value ? 'active' : ''}`}
-                            onClick={() => setFilterCategory(cat.value)}
-                        >
-                            {cat.label}
-                        </button>
-                    ))}
+                {/* Quick Filter Pills */}
+                <div className="quick-filters">
+                    <button 
+                        className={`quick-filter-pill ${lightFilter === 'low-light' && difficultyFilter === 'Easy' && toxicityFilter === 'non-toxic' ? 'active' : ''}`}
+                        onClick={() => applyQuickFilter('low-light', 'Easy', 'non-toxic')}
+                    >
+                        🟢 Beginner + Low Light + Pet-Safe
+                    </button>
+                    <button 
+                        className={`quick-filter-pill ${lightFilter === 'bright-light' && difficultyFilter === 'Easy' ? 'active' : ''}`}
+                        onClick={() => applyQuickFilter('bright-light', 'Easy', 'all')}
+                    >
+                        ☀️ Easy + Bright Light
+                    </button>
+                    <button 
+                        className={`quick-filter-pill ${toxicityFilter === 'non-toxic' ? 'active' : ''}`}
+                        onClick={() => applyQuickFilter('all', 'all', 'non-toxic')}
+                    >
+                        🐾 Pet-Safe
+                    </button>
                 </div>
+
+                {/* Multi-Select Filters */}
+                <div className="filter-group">
+                    <div className="filter-section">
+                        <label>Light Level:</label>
+                        <div className="filter-buttons">
+                            {categories.map((cat) => (
+                                <button
+                                    key={cat.value}
+                                    className={`filter-btn ${lightFilter === cat.value ? 'active' : ''}`}
+                                    onClick={() => setLightFilter(cat.value)}
+                                >
+                                    {cat.label}
+                                </button>
+                            ))}
+                        </div>
+                    </div>
+
+                    <div className="filter-section">
+                        <label>Difficulty:</label>
+                        <div className="filter-buttons">
+                            {difficulties.map((diff) => (
+                                <button
+                                    key={diff.value}
+                                    className={`filter-btn ${difficultyFilter === diff.value ? 'active' : ''}`}
+                                    onClick={() => setDifficultyFilter(diff.value)}
+                                >
+                                    {diff.label}
+                                </button>
+                            ))}
+                        </div>
+                    </div>
+
+                    <div className="filter-section">
+                        <label>Pet Safety:</label>
+                        <div className="filter-buttons">
+                            {toxicityOptions.map((tox) => (
+                                <button
+                                    key={tox.value}
+                                    className={`filter-btn ${toxicityFilter === tox.value ? 'active' : ''}`}
+                                    onClick={() => setToxicityFilter(tox.value)}
+                                >
+                                    {tox.label}
+                                </button>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+
+                {/* Reset Button */}
+                {hasActiveFilters && (
+                    <button className="reset-filters-btn" onClick={resetFilters}>
+                        ✕ Clear All Filters
+                    </button>
+                )}
             </div>
 
             <div className="results-info">
                 Showing {filteredPlants.length} of {plants.length} plants
+                {hasActiveFilters && <span className="active-filter-count"> ({filteredPlants.length} results)</span>}
             </div>
 
             <div className="plants-grid">
@@ -720,7 +826,13 @@ const PlantCareReference = () => {
                     ))
                 ) : (
                     <div className="no-results">
-                        <p>No plants found matching your search. Try a different name or filter!</p>
+                        <p>🌱 No plants found matching your filters.</p>
+                        <p style={{ fontSize: '0.9em', marginTop: '8px' }}>Try adjusting your search or filters!</p>
+                        {hasActiveFilters && (
+                            <button style={{ marginTop: '12px' }} className="reset-filters-btn" onClick={resetFilters}>
+                                ✕ Reset Filters
+                            </button>
+                        )}
                     </div>
                 )}
             </div>
