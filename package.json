@@ -1,5 +1,5 @@
 {
-  "name": "NCN_Toolbox",
+  "name": "my-price-calculator-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -20,7 +20,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://verrucosity.github.io/NCN_Toolbox/",
+  "homepage": "https://verrucosity.github.io/my-price-calculator-app/",
   "eslintConfig": {
     "extends": [
       "react-app",
