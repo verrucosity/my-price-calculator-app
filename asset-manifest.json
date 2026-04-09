@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/NCN_Toolbox/static/css/main.dc455493.css",
-    "main.js": "/NCN_Toolbox/static/js/main.45586a3b.js",
-    "static/js/453.962387ef.chunk.js": "/NCN_Toolbox/static/js/453.962387ef.chunk.js",
-    "index.html": "/NCN_Toolbox/index.html",
-    "main.dc455493.css.map": "/NCN_Toolbox/static/css/main.dc455493.css.map",
-    "main.45586a3b.js.map": "/NCN_Toolbox/static/js/main.45586a3b.js.map",
-    "453.962387ef.chunk.js.map": "/NCN_Toolbox/static/js/453.962387ef.chunk.js.map"
+    "main.css": "/my-price-calculator-app/static/css/main.dc455493.css",
+    "main.js": "/my-price-calculator-app/static/js/main.2283bd4d.js",
+    "static/js/453.ed1846d1.chunk.js": "/my-price-calculator-app/static/js/453.ed1846d1.chunk.js",
+    "index.html": "/my-price-calculator-app/index.html",
+    "main.dc455493.css.map": "/my-price-calculator-app/static/css/main.dc455493.css.map",
+    "main.2283bd4d.js.map": "/my-price-calculator-app/static/js/main.2283bd4d.js.map",
+    "453.ed1846d1.chunk.js.map": "/my-price-calculator-app/static/js/453.ed1846d1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.dc455493.css",
-    "static/js/main.45586a3b.js"
+    "static/js/main.2283bd4d.js"
   ]
 }
