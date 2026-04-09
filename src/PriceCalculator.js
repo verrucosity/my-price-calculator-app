@@ -19,7 +19,6 @@ const PriceCalculator = () => {
         { name: "Select a vendor", value: "1" },
         { name: "A.N.T Nursery", value: "3.09" },
         { name: "Alexander Hay Greenhouses", value: "3.09" },
-        { name: "Amazon", value: "3.175" },
         { name: "Arett Sales (General)", value: "2.06" },
         { name: "Arett Sales (Holiday)", value: "2.3175" },
         { name: "Arett Sales (Pottery)", value: "2.3175" },
@@ -28,7 +27,7 @@ const PriceCalculator = () => {
         { name: "Crescent Gardens (Pottery)", value: "2.575" },
         { name: "De Groot & Sons", value: "3.09" },
         { name: "Dean's Evergreen's", value: "3.09" },
-        { name: "Digging Dog Nursery", value: "3.8625" },
+        { name: "Digging Dog Nursery (Plugs)", value: "3.8625" },
         { name: "Edgar Joyce Nursery", value: "3.605" },
         { name: "Emma's Garden", value: "3.09" },
         { name: "Eshraghi Nurseries, LLC.", value: "3.09" },
@@ -41,6 +40,7 @@ const PriceCalculator = () => {
         { name: "Kurt Lee (Ribbons)", value: "3.09" },
         { name: "Lowe's", value: "1.545" },
         { name: "Massarelli's", value: "2.06" },
+        { name: "Masonry Depot", value: "1.545" },
         { name: "McEnroe Farms", value: "3.09" },
         { name: "Mindful Source Pottery (ECOPOTS)", value: "2.575" },
         { name: "Napco", value: "3.09" },
@@ -49,11 +49,11 @@ const PriceCalculator = () => {
         { name: "Plainview Growers", value: "3.09" },
         { name: "Pride's Corner Farms", value: "3.09" },
         { name: "Prospero Farms", value: "2.3175" },
+        { name: "Sunset Farmstead", value: "3.09" },
         { name: "Tuckahoe Nursery", value: "4.12" },
         { name: "Van Vugt Greenhouses", value: "3.09" },
-        { name: "Van Wingerden Kenneth Greenhouses", value: "3.09" },
-        { name: "Van Wingerden Greenhouses", value: "3.09" },
-        { name: "Digging Dog Nursery (Plugs)", value: "3.605" }
+        { name: "Van Windgerden Kenneth Greenhouses", value: "3.09" },
+        { name: "Van Wingerden Greenhouses", value: "3.09" }
     ];
 
     const handleBasePriceChange = (e) => {
