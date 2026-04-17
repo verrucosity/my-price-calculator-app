@@ -846,11 +846,6 @@ const PlantCareReference = () => {
                 {filteredPlants.length > 0 ? (
                     filteredPlants.map((plant) => (
                         <div key={plant.id} className="plant-card">
-                            {plant.image && (
-                                <div className="plant-image-container">
-                                    <img src={plant.image} alt={plant.name} className="plant-image" onError={(e) => {e.target.style.display = 'none'}} />
-                                </div>
-                            )}
                             <div className="plant-header">
                                 <h2>{plant.name}</h2>
                                 <span className={`difficulty ${plant.difficulty.toLowerCase()}`}>
