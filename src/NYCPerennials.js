@@ -246,6 +246,127 @@ const NYCPerennials = () => {
             tips: 'Feathery plume-like flowers. Shade lover. Beautiful fern-like foliage. No deadheading needed.',
             color: 'Pink, red, white varieties',
             maintenance: 'Easy'
+        },
+        {
+            id: 21,
+            name: 'Liatris (Blazing Star)',
+            bloom: 'July-September',
+            zone: 'Zone 3-9',
+            height: 'Medium to tall (18-36")',
+            sunlight: 'Full sun',
+            water: 'Drought tolerant',
+            tips: 'Unique spike flowers bloom from top down. Attracts butterflies & bees. Great for cutting.',
+            color: 'Purple, pink, white varieties',
+            maintenance: 'Easy'
+        },
+        {
+            id: 22,
+            name: 'Lupine',
+            bloom: 'May-June',
+            zone: 'Zone 3-9',
+            height: 'Medium to tall (18-36")',
+            sunlight: 'Full sun to part shade',
+            water: 'Moderate drainage',
+            tips: 'Dramatic spike flowers. Attracts bees. Nitrogen-fixing legume. Support tall varieties. Self-seeds.',
+            color: 'Blue, purple, pink, white, bicolor',
+            maintenance: 'Moderate'
+        },
+        {
+            id: 23,
+            name: 'Goldenrod (Solidago)',
+            bloom: 'August-October',
+            zone: 'Zone 3-9',
+            height: 'Medium to tall (18-36")',
+            sunlight: 'Full sun to part shade',
+            water: 'Drought tolerant once established',
+            tips: 'Native wildflower. Does NOT cause allergies (unlike ragweed). Late-season bee & butterfly magnet.',
+            color: 'Yellow',
+            maintenance: 'Easy'
+        },
+        {
+            id: 24,
+            name: 'Liriope (Lily Turf)',
+            bloom: 'August-September',
+            zone: 'Zone 4-11',
+            height: 'Short to medium (12-24")',
+            sunlight: 'Part shade to shade',
+            water: 'Drought tolerant',
+            tips: 'Spring to fall foliage interest. Evergreen in milder zones. Attracts butterflies. Very low maintenance.',
+            color: 'Purple/lavender spikes; green strappy foliage',
+            maintenance: 'Easy'
+        },
+        {
+            id: 25,
+            name: 'Hellebore (Christmas Rose)',
+            bloom: 'December-April',
+            zone: 'Zone 3-9',
+            height: 'Short to medium (12-18")',
+            sunlight: 'Shade to part sun',
+            water: 'Keep soil consistently moist',
+            tips: 'Winter bloomer! Evergreen foliage. Deer resistant. Long-lived. Slow to establish.',
+            color: 'White, pink, purple, burgundy varieties',
+            maintenance: 'Moderate'
+        },
+        {
+            id: 26,
+            name: 'Veronica (Speedwell)',
+            bloom: 'June-August',
+            zone: 'Zone 3-8',
+            height: 'Short to medium (12-24")',
+            sunlight: 'Full sun to part shade',
+            water: 'Moderate, drought tolerant',
+            tips: 'Delicate spiky flowers. Low maintenance. Attracts pollinators. Great cut flowers.',
+            color: 'Blue, purple, pink, white varieties',
+            maintenance: 'Easy'
+        },
+        {
+            id: 27,
+            name: 'Allium (Ornamental Onion)',
+            bloom: 'May-June',
+            zone: 'Zone 3-9',
+            height: 'Medium to tall (12-36")',
+            sunlight: 'Full sun',
+            water: 'Drought tolerant bulb',
+            temp: '50-65°F (10-18°C)',
+            tips: 'Spherical fireworks flowers. Deer & rodent resistant. Great for cutting. Naturalizes well.',
+            color: 'Purple, pink, white, yellow varieties',
+            maintenance: 'Easy'
+        },
+        {
+            id: 28,
+            name: 'Hellenium (Sneezeweed)',
+            bloom: 'August-October',
+            zone: 'Zone 3-8',
+            height: 'Medium to tall (18-36")',
+            sunlight: 'Full sun',
+            water: 'Moderate, prefers moist soil',
+            tips: 'Native wildflower. Late-season bloomer. Attracts butterflies. Great for fall arrangements.',
+            color: 'Yellow with red/burgundy centers',
+            maintenance: 'Easy'
+        },
+        {
+            id: 29,
+            name: 'Digitalis (Foxglove)',
+            bloom: 'June-July',
+            zone: 'Zone 3-9 (biennial/short-lived)',
+            height: 'Tall (24-48")',
+            sunlight: 'Part shade to shade',
+            water: 'Keep soil moist',
+            tips: 'Dramatic spire flowers. Biennial (flowers 2nd year). Attracts hummingbirds. Self-seeds. All parts toxic.',
+            color: 'Pink, purple, white, yellow varieties',
+            maintenance: 'Moderate'
+        },
+        {
+            id: 30,
+            name: 'Stachys (Lamb\'s Ear)',
+            bloom: 'June-July (foliage focus)',
+            zone: 'Zone 4-8',
+            height: 'Short to medium (12-18")',
+            sunlight: 'Full sun to part shade',
+            water: 'Drought tolerant',
+            tips: 'Soft velvety silver-gray foliage. Great edging plant. Tall varieties with pink flowers. Very hardy.',
+            color: 'Purple/pink flowers; silvery foliage',
+            maintenance: 'Easy'
         }
     ];
 
