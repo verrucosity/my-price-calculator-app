@@ -273,7 +273,7 @@ const NYCPerennials = () => {
 
     return (
         <div className="plant-care-container">
-            <h1>🌼 NYC Perennials Guide</h1>
+            <h1>🌼 Perennials Guide</h1>
             <p className="subtitle">Hardy perennials perfect for New York City gardens (Zone 7a/7b)</p>
 
             <div className="control-panel">

@@ -228,7 +228,7 @@ const NYCAnnualFlowers = () => {
 
     return (
         <div className="plant-care-container">
-            <h1>🌸 NYC Annual Flowers Guide</h1>
+            <h1>🌸 Annual Flowers Guide</h1>
             <p className="subtitle">Seasonal flowers perfect for New York City gardens (Zone 7a/7b)</p>
 
             <div className="control-panel">

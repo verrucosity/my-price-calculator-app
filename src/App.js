@@ -43,13 +43,13 @@ function App() {
             className={`tab-button ${activeTab === 'annuals' ? 'active' : ''}`}
             onClick={() => setActiveTab('annuals')}
           >
-            🌸 NYC Annual Flowers
+            🌸 Annual Flowers
           </button>
           <button 
             className={`tab-button ${activeTab === 'perennials' ? 'active' : ''}`}
             onClick={() => setActiveTab('perennials')}
           >
-            🌼 NYC Perennials
+            🌼 Perennials
           </button>
           <button 
             className={`tab-button ${activeTab === 'codes' ? 'active' : ''}`}
