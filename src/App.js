@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 import './App.css';
 import PriceCalculator from './PriceCalculator';
 import PlantCareReference from './PlantCareReference';
+import NYCAnnualFlowers from './NYCAnnualFlowers';
+import NYCPerennials from './NYCPerennials';
 import EmojiCodeGuide from './EmojiCodeGuide';
 import MulchCalculator from './MulchCalculator';
 
@@ -38,6 +40,18 @@ function App() {
             🌿 Plant Care Guide
           </button>
           <button 
+            className={`tab-button ${activeTab === 'annuals' ? 'active' : ''}`}
+            onClick={() => setActiveTab('annuals')}
+          >
+            🌸 NYC Annual Flowers
+          </button>
+          <button 
+            className={`tab-button ${activeTab === 'perennials' ? 'active' : ''}`}
+            onClick={() => setActiveTab('perennials')}
+          >
+            🌼 NYC Perennials
+          </button>
+          <button 
             className={`tab-button ${activeTab === 'codes' ? 'active' : ''}`}
             onClick={() => setActiveTab('codes')}
           >
@@ -49,6 +63,8 @@ function App() {
           {activeTab === 'calculator' && <PriceCalculator />}
           {activeTab === 'mulch' && <MulchCalculator />}
           {activeTab === 'plants' && <PlantCareReference />}
+          {activeTab === 'annuals' && <NYCAnnualFlowers />}
+          {activeTab === 'perennials' && <NYCPerennials />}
           {activeTab === 'codes' && <EmojiCodeGuide />}
         </div>
       </header>
