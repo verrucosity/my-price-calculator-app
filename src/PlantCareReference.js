@@ -630,6 +630,19 @@ const PlantCareReference = () => {
             difficulty: 'Easy',
             toxicToCats: 'Non-toxic',
             toxicToDogs: 'Non-toxic'
+        },
+        {
+            id: 49,
+            name: 'Bird of Paradise',
+            category: 'bright-light',
+            light: 'Bright indirect to direct light',
+            water: 'Water when soil is dry to touch',
+            humidity: 'Moderate (40-50%)',
+            temp: '65-75°F (18-24°C)',
+            tips: 'Stunning orange & blue tropical flowers. Can take time to bloom indoors (3-5 years). Needs bright light.',
+            difficulty: 'Moderate',
+            toxicToCats: 'Toxic',
+            toxicToDogs: 'Toxic'
         }
     ];
 
