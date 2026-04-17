@@ -10,6 +10,7 @@ const PlantCareReference = () => {
         {
             id: 1,
             name: 'Pothos (Devil\'s Ivy)',
+            image: 'https://source.unsplash.com/400x300/?pothos',
             category: 'low-light',
             light: 'Low to bright indirect light',
             water: 'Water when soil is dry (1-2 weeks)',
@@ -23,6 +24,7 @@ const PlantCareReference = () => {
         {
             id: 2,
             name: 'Snake Plant (Sansevieria)',
+            image: 'https://source.unsplash.com/400x300/?snake-plant',
             category: 'low-light',
             light: 'Low to bright indirect light',
             water: 'Water every 3-4 weeks, let dry out',
@@ -35,6 +37,7 @@ const PlantCareReference = () => {
         },
         {
             id: 3,
+            image: 'https://source.unsplash.com/400x300/?zz-plant',
             name: 'ZZ Plant',
             category: 'low-light',
             light: 'Low to bright indirect light',
@@ -49,6 +52,7 @@ const PlantCareReference = () => {
         {
             id: 4,
             name: 'Monstera Deliciosa',
+            image: 'https://source.unsplash.com/400x300/?monstera',
             category: 'moderate-light',
             light: 'Bright indirect light',
             water: 'Water when top 1-2 inches dry (weekly)',
@@ -62,6 +66,7 @@ const PlantCareReference = () => {
         {
             id: 5,
             name: 'Fiddle Leaf Fig',
+            image: 'https://source.unsplash.com/400x300/?fiddle-leaf-fig',
             category: 'bright-light',
             light: 'Bright indirect light (6+ hours)',
             water: 'Water when soil is moist but not wet',
@@ -75,6 +80,7 @@ const PlantCareReference = () => {
         {
             id: 6,
             name: 'Rubber Plant',
+            image: 'https://source.unsplash.com/400x300/?rubber-plant',
             category: 'bright-light',
             light: 'Bright indirect light',
             water: 'Water when top 1 inch is dry',
@@ -88,6 +94,7 @@ const PlantCareReference = () => {
         {
             id: 7,
             name: 'Spider Plant',
+            image: 'https://source.unsplash.com/400x300/?spider-plant',
             category: 'low-light',
             light: 'Bright indirect to low light',
             water: 'Water when soil is dry (1-2 weeks)',
@@ -101,6 +108,7 @@ const PlantCareReference = () => {
         {
             id: 8,
             name: 'Philodendron',
+            image: 'https://source.unsplash.com/400x300/?philodendron',
             category: 'low-light',
             light: 'Low to bright indirect light',
             water: 'Water when soil is moist (1-2 weeks)',
@@ -113,6 +121,7 @@ const PlantCareReference = () => {
         },
         {
             id: 9,
+            image: 'https://source.unsplash.com/400x300/?african-violet',
             name: 'African Violet',
             category: 'moderate-light',
             light: 'Bright indirect light (12-16 hours)',
@@ -126,6 +135,7 @@ const PlantCareReference = () => {
         },
         {
             id: 10,
+            image: 'https://source.unsplash.com/400x300/?peace-lily',
             name: 'Peace Lily',
             category: 'low-light',
             light: 'Low to moderate indirect light',
@@ -139,6 +149,7 @@ const PlantCareReference = () => {
         },
         {
             id: 11,
+            image: 'https://source.unsplash.com/400x300/?calathea',
             name: 'Calathea',
             category: 'moderate-light',
             light: 'Bright indirect light, no direct sun',
@@ -152,6 +163,7 @@ const PlantCareReference = () => {
         },
         {
             id: 12,
+            image: 'https://source.unsplash.com/400x300/?succulents',
             name: 'Succulents (Aloe, Jade)',
             category: 'bright-light',
             light: 'Bright direct light (4+ hours)',
@@ -164,6 +176,7 @@ const PlantCareReference = () => {
             toxicToDogs: 'Toxic'
         },
         {
+            image: 'https://source.unsplash.com/400x300/?orchid',
             id: 13,
             name: 'Orchid',
             category: 'bright-light',
@@ -177,6 +190,7 @@ const PlantCareReference = () => {
             toxicToDogs: 'Non-toxic'
         },
         {
+            image: 'https://source.unsplash.com/400x300/?boston-fern',
             id: 14,
             name: 'Boston Fern',
             category: 'moderate-light',
@@ -190,6 +204,7 @@ const PlantCareReference = () => {
             toxicToDogs: 'Non-toxic'
         },
         {
+            image: 'https://source.unsplash.com/400x300/?peperomia',
             id: 15,
             name: 'Peperomia',
             category: 'moderate-light',
@@ -205,6 +220,7 @@ const PlantCareReference = () => {
         {
             id: 16,
             name: 'Dracaena',
+            image: 'https://source.unsplash.com/400x300/?dracaena',
             category: 'low-light',
             light: 'Low to bright indirect light',
             water: 'Water when soil is dry (2-3 weeks)',
@@ -218,6 +234,7 @@ const PlantCareReference = () => {
         {
             id: 17,
             name: 'Heart-Leaf Philodendron',
+            image: 'https://source.unsplash.com/400x300/?heart-leaf',
             category: 'low-light',
             light: 'Low to moderate light',
             water: 'Water when soil is dry (1-2 weeks)',
@@ -231,6 +248,7 @@ const PlantCareReference = () => {
         {
             id: 18,
             name: 'String of Pearls',
+            image: 'https://source.unsplash.com/400x300/?string-of-pearls',
             category: 'bright-light',
             light: 'Bright indirect to direct light',
             water: 'Water lightly, let dry between waterings',
@@ -244,6 +262,7 @@ const PlantCareReference = () => {
         {
             id: 19,
             name: 'Anthurium',
+            image: 'https://source.unsplash.com/400x300/?anthurium',
             category: 'moderate-light',
             light: 'Bright indirect light',
             water: 'Water when soil is dry to touch',
@@ -257,6 +276,7 @@ const PlantCareReference = () => {
         {
             id: 20,
             name: 'Pothos Marble Queen',
+            image: 'https://source.unsplash.com/400x300/?marble-pothos',
             category: 'low-light',
             light: 'Low to bright indirect light',
             water: 'Water when soil is dry (1-2 weeks)',
@@ -270,6 +290,7 @@ const PlantCareReference = () => {
         {
             id: 21,
             name: 'Monstera Adansonii',
+            image: 'https://source.unsplash.com/400x300/?monstera-adansonii',
             category: 'moderate-light',
             light: 'Bright indirect light',
             water: 'Water when soil is dry to touch',
@@ -283,6 +304,7 @@ const PlantCareReference = () => {
         {
             id: 22,
             name: 'Syngonium',
+            image: 'https://source.unsplash.com/400x300/?syngonium',
             category: 'low-light',
             light: 'Low to moderate indirect light',
             water: 'Water when soil is slightly dry',
@@ -296,6 +318,7 @@ const PlantCareReference = () => {
         {
             id: 23,
             name: 'Begonia',
+            image: 'https://source.unsplash.com/400x300/?begonia',
             category: 'moderate-light',
             light: 'Bright indirect light',
             water: 'Keep soil consistently moist',
@@ -309,6 +332,7 @@ const PlantCareReference = () => {
         {
             id: 24,
             name: 'Neon Pothos',
+            image: 'https://source.unsplash.com/400x300/?neon-pothos',
             category: 'low-light',
             light: 'Low to bright indirect light',
             water: 'Water when soil is dry (1-2 weeks)',
@@ -322,6 +346,7 @@ const PlantCareReference = () => {
         {
             id: 25,
             name: 'Aspidistra (Cast Iron Plant)',
+            image: 'https://source.unsplash.com/400x300/?cast-iron-plant',
             category: 'low-light',
             light: 'Low to moderate light',
             water: 'Water every 2-3 weeks',
@@ -335,6 +360,7 @@ const PlantCareReference = () => {
         {
             id: 26,
             name: 'Croton',
+            image: 'https://source.unsplash.com/400x300/?croton',
             category: 'bright-light',
             light: 'Bright indirect to direct light',
             water: 'Water when soil is dry to touch',
@@ -355,6 +381,7 @@ const PlantCareReference = () => {
             temp: '65-75°F (18-24°C)',
             tips: 'Silver-spotted heart-shaped leaves. Trailing or climbing. More humidity than regular Pothos.',
             difficulty: 'Moderate',
+            image: 'https://source.unsplash.com/400x300/?alocasia',
             toxicToCats: 'Toxic',
             toxicToDogs: 'Toxic'
         },
@@ -367,6 +394,7 @@ const PlantCareReference = () => {
             humidity: 'High (60-80%)',
             temp: '65-80°F (18-27°C)',
             tips: 'Stunning arrow-shaped leaves with prominent veins. Drama queen. Needs humidity & warmth.',
+            image: 'https://source.unsplash.com/400x300/?haworthia',
             difficulty: 'Moderate',
             toxicToCats: 'Toxic',
             toxicToDogs: 'Toxic'
@@ -380,6 +408,7 @@ const PlantCareReference = () => {
             humidity: 'Low (10-30%)',
             temp: '60-75°F (15-24°C)',
             tips: 'Tiny succulent rosette. Stays small. Perfect for shelves. Very drought tolerant.',
+            image: 'https://source.unsplash.com/400x300/?pilea',
             difficulty: 'Easy',
             toxicToCats: 'Toxic',
             toxicToDogs: 'Toxic'
@@ -393,6 +422,7 @@ const PlantCareReference = () => {
             humidity: 'Moderate (40-50%)',
             temp: '60-75°F (15-24°C)',
             tips: 'Unique round coin-shaped leaves. Rotates toward light. Produces pups for propagation.',
+            image: 'https://source.unsplash.com/400x300/?maranta',
             difficulty: 'Easy',
             toxicToCats: 'Non-toxic',
             toxicToDogs: 'Non-toxic'
@@ -405,6 +435,7 @@ const PlantCareReference = () => {
             water: 'Keep soil consistently moist',
             humidity: 'High (60-80%)',
             temp: '65-75°F (18-24°C)',
+            image: 'https://source.unsplash.com/400x300/?clivia',
             tips: 'Leaves fold up at night (like praying hands). Beautiful patterns. Needs humidity.',
             difficulty: 'Moderate',
             toxicToCats: 'Non-toxic',
@@ -418,6 +449,7 @@ const PlantCareReference = () => {
             water: 'Water when soil is dry to touch',
             humidity: 'Average (30-50%)',
             temp: '60-75°F (15-24°C)',
+            image: 'https://source.unsplash.com/400x300/?curcuma',
             tips: 'Bright orange flowers. Long strappy leaves. Blooms in spring. Low maintenance.',
             difficulty: 'Easy',
             toxicToCats: 'Toxic',
@@ -431,6 +463,7 @@ const PlantCareReference = () => {
             water: 'Keep soil moist during growing season',
             humidity: 'High (60-80%)',
             temp: '70-80°F (21-27°C)',
+            image: 'https://source.unsplash.com/400x300/?aglaonema',
             tips: 'Beautiful pink & white flower-like spathes. May go dormant. Loves warmth & humidity.',
             difficulty: 'Moderate',
             toxicToCats: 'Non-toxic',
@@ -444,6 +477,7 @@ const PlantCareReference = () => {
             water: 'Water when soil is slightly dry',
             humidity: 'Average to high (40-60%)',
             temp: '65-75°F (18-24°C)',
+            image: 'https://source.unsplash.com/400x300/?schefflera',
             tips: 'Colorful patterned leaves. Many varieties. Very low maintenance. Great for offices.',
             difficulty: 'Easy',
             toxicToCats: 'Toxic',
@@ -457,6 +491,7 @@ const PlantCareReference = () => {
             water: 'Water when soil is dry to touch',
             humidity: 'Average (30-50%)',
             temp: '60-75°F (15-24°C)',
+            image: 'https://source.unsplash.com/400x300/?string-of-hearts',
             tips: 'Large umbrella-like leaves. Grows tall. Can handle some neglect. Air purifier.',
             difficulty: 'Easy',
             toxicToCats: 'Toxic',
@@ -469,6 +504,7 @@ const PlantCareReference = () => {
             light: 'Bright indirect to direct light',
             water: 'Water lightly, let dry between waterings',
             humidity: 'Low to average (20-40%)',
+            image: 'https://source.unsplash.com/400x300/?fittonia',
             temp: '60-75°F (15-24°C)',
             tips: 'Tiny heart-shaped leaves on trailing vines. Very drought tolerant. Perfect for hanging baskets.',
             difficulty: 'Easy',
@@ -482,6 +518,7 @@ const PlantCareReference = () => {
             light: 'Bright indirect light (no direct sun)',
             water: 'Keep soil evenly moist',
             humidity: 'Very high (70-80%)',
+            image: 'https://source.unsplash.com/400x300/?echeveria',
             temp: '65-75°F (18-24°C)',
             tips: 'Delicate veined leaves. Wilts dramatically when thirsty. Needs consistent care & humidity.',
             difficulty: 'Hard',
@@ -494,6 +531,7 @@ const PlantCareReference = () => {
             category: 'bright-light',
             light: 'Bright direct light (4-6 hours)',
             water: 'Water deeply, let dry completely between',
+            image: 'https://source.unsplash.com/400x300/?burros-tail',
             humidity: 'Low (10-30%)',
             temp: '60-75°F (15-24°C)',
             tips: 'Perfect rosette succulents. Produces beautiful flowers. Extremely drought tolerant & easy.',
@@ -507,6 +545,7 @@ const PlantCareReference = () => {
             category: 'bright-light',
             light: 'Bright indirect to direct light',
             water: 'Water lightly, let dry between waterings',
+            image: 'https://source.unsplash.com/400x300/?epipremnum',
             humidity: 'Low (10-30%)',
             temp: '60-75°F (15-24°C)',
             tips: 'Long trailing stems with chubby leaves. Very drought tolerant. Fragile leaves.',
@@ -520,6 +559,7 @@ const PlantCareReference = () => {
             category: 'moderate-light',
             light: 'Bright indirect light',
             water: 'Water when soil is dry to touch',
+            image: 'https://source.unsplash.com/400x300/?zz-plant-raven',
             humidity: 'Moderate to high (40-60%)',
             temp: '65-75°F (18-24°C)',
             tips: 'Similar to Pothos but larger leaves. Develops fenestration (holes) as it matures. Stunning climber.',
@@ -532,6 +572,7 @@ const PlantCareReference = () => {
             name: 'Zamioculcas (ZZ Plant Raven)',
             category: 'low-light',
             light: 'Low to bright indirect light',
+            image: 'https://source.unsplash.com/400x300/?hoya',
             water: 'Water every 2-3 weeks, let dry',
             humidity: 'Low to average (20-40%)',
             temp: '65-75°F (18-24°C)',
@@ -545,6 +586,7 @@ const PlantCareReference = () => {
             name: 'Hoya Carnosa (Wax Plant)',
             category: 'moderate-light',
             light: 'Bright indirect light',
+            image: 'https://source.unsplash.com/400x300/?mini-monstera',
             water: 'Water when soil is dry to touch',
             humidity: 'Moderate (40-50%)',
             temp: '65-75°F (18-24°C)',
@@ -558,6 +600,7 @@ const PlantCareReference = () => {
             name: 'Rhaphidophora Tetrasperma (Mini Monstera)',
             category: 'moderate-light',
             light: 'Bright indirect light',
+            image: 'https://source.unsplash.com/400x300/?dischidia',
             water: 'Water when soil is dry to touch',
             humidity: 'Moderate to high (40-60%)',
             temp: '65-75°F (18-24°C)',
@@ -571,6 +614,7 @@ const PlantCareReference = () => {
             name: 'Dischidia (Watermelon Plant)',
             category: 'moderate-light',
             light: 'Bright indirect light',
+            image: 'https://source.unsplash.com/400x300/?kalanchoe',
             water: 'Water when soil is dry to touch',
             humidity: 'Moderate (40-50%)',
             temp: '65-75°F (18-24°C)',
@@ -583,6 +627,7 @@ const PlantCareReference = () => {
             id: 45,
             name: 'Kalanchoe Blossfeldiana (Flaming Katy)',
             category: 'bright-light',
+            image: 'https://source.unsplash.com/400x300/?cebu-blue',
             light: 'Bright indirect to direct light',
             water: 'Water when soil is dry',
             humidity: 'Low to average (20-40%)',
@@ -596,6 +641,7 @@ const PlantCareReference = () => {
             id: 46,
             name: 'Epipremnum Pinnatum Cebu Blue',
             category: 'moderate-light',
+            image: 'https://source.unsplash.com/400x300/?fig-leaf',
             light: 'Bright indirect light',
             water: 'Water when soil is dry to touch',
             humidity: 'Moderate to high (40-60%)',
@@ -609,6 +655,7 @@ const PlantCareReference = () => {
             id: 47,
             name: 'Thaumatococcus Danielis (Articificial Fig)',
             category: 'moderate-light',
+            image: 'https://source.unsplash.com/400x300/?money-tree',
             light: 'Bright indirect light',
             water: 'Keep soil moist but not waterlogged',
             humidity: 'High (60-80%)',
@@ -622,6 +669,7 @@ const PlantCareReference = () => {
             id: 48,
             name: 'Pseudorhaphidophora (Mini Money Tree)',
             category: 'moderate-light',
+            image: 'https://source.unsplash.com/400x300/?bird-of-paradise',
             light: 'Bright indirect light',
             water: 'Water when soil is dry to touch',
             humidity: 'Moderate (40-50%)',
@@ -798,6 +846,11 @@ const PlantCareReference = () => {
                 {filteredPlants.length > 0 ? (
                     filteredPlants.map((plant) => (
                         <div key={plant.id} className="plant-card">
+                            {plant.image && (
+                                <div className="plant-image-container">
+                                    <img src={plant.image} alt={plant.name} className="plant-image" onError={(e) => {e.target.style.display = 'none'}} />
+                                </div>
+                            )}
                             <div className="plant-header">
                                 <h2>{plant.name}</h2>
                                 <span className={`difficulty ${plant.difficulty.toLowerCase()}`}>
