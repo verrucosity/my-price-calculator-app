@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 const EmojiCodeGuide = () => {
     const [selectedCodes, setSelectedCodes] = useState({});
     const [copied, setCopied] = useState(false);
+    const [searchTerm, setSearchTerm] = useState('');
 
     const codeCategories = {
         'Outdoor Maintenance': [
@@ -61,6 +62,8 @@ const EmojiCodeGuide = () => {
         ]
     };
 
+    const [selectedCategories, setSelectedCategories] = useState(new Set(Object.keys(codeCategories)));
+
     const toggleCode = (category, index) => {
         const key = `${category}-${index}`;
         setSelectedCodes(prev => ({
@@ -87,7 +90,7 @@ const EmojiCodeGuide = () => {
         }
     };
 
-    const copySingleCode = (emoji, name, description) => {
+    const copySingleCode = (emoji) => {
         navigator.clipboard.writeText(emoji);
         setCopied(true);
         setTimeout(() => setCopied(false), 1500);
@@ -107,12 +110,60 @@ const EmojiCodeGuide = () => {
         setSelectedCodes({});
     };
 
+    const toggleCategory = (category) => {
+        const newCategories = new Set(selectedCategories);
+        if (newCategories.has(category)) {
+            newCategories.delete(category);
+        } else {
+            newCategories.add(category);
+        }
+        setSelectedCategories(newCategories);
+    };
+
     const selectedCount = Object.values(selectedCodes).filter(Boolean).length;
+
+    const filteredCategories = Object.entries(codeCategories)
+        .filter(([category]) => selectedCategories.has(category))
+        .map(([category, codes]) => {
+            const filteredCodes = codes.filter(code =>
+                searchTerm === '' ||
+                code.emoji.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                code.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                code.description.toLowerCase().includes(searchTerm.toLowerCase())
+            );
+            return [category, filteredCodes];
+        })
+        .filter(([, codes]) => codes.length > 0);
 
     return (
         <div className="emoji-code-container">
             <h1>📋 Emoji Job Code Guide</h1>
             <p className="subtitle">Click codes to select, then copy all at once!</p>
+
+            <div className="code-controls">
+                <input
+                    type="text"
+                    placeholder="Search by emoji or description..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="search-input"
+                />
+            </div>
+
+            <div className="category-filters">
+                <div className="filter-label">Categories:</div>
+                <div className="filter-buttons">
+                    {Object.keys(codeCategories).map(category => (
+                        <button
+                            key={category}
+                            className={`category-btn ${selectedCategories.has(category) ? 'active' : ''}`}
+                            onClick={() => toggleCategory(category)}
+                        >
+                            {category}
+                        </button>
+                    ))}
+                </div>
+            </div>
 
             <div className="code-controls">
                 <button onClick={selectAll} className="control-btn">Select All</button>
@@ -128,48 +179,57 @@ const EmojiCodeGuide = () => {
             </div>
 
             <div className="codes-sections">
-                {Object.entries(codeCategories).map(([category, codes]) => (
-                    <div key={category} className="code-section">
-                        <h2>{category}</h2>
-                        <div className="codes-grid">
-                            {codes.map((code, index) => {
-                                const key = `${category}-${index}`;
-                                const isSelected = selectedCodes[key];
+                {filteredCategories.length > 0 ? (
+                    filteredCategories.map(([category, codes]) => (
+                        <div key={category} className="code-section">
+                            <h2>{category}</h2>
+                            <div className="codes-grid">
+                                {codes.map((code, index) => {
+                                    const originalIndex = codeCategories[category].findIndex(
+                                        c => c.emoji === code.emoji && c.name === code.name
+                                    );
+                                    const key = `${category}-${originalIndex}`;
+                                    const isSelected = selectedCodes[key];
 
-                                return (
-                                    <div 
-                                        key={key}
-                                        className={`code-item ${isSelected ? 'selected' : ''}`}
-                                        onClick={() => toggleCode(category, index)}
-                                    >
-                                        <div className="code-emoji">{code.emoji}</div>
-                                        <div className="code-checkbox">
-                                            <input 
-                                                type="checkbox" 
-                                                checked={isSelected}
-                                                onChange={() => {}}
-                                            />
-                                        </div>
-                                        <div className="code-content">
-                                            <div className="code-name">{code.name}</div>
-                                            <div className="code-description">{code.description}</div>
-                                        </div>
-                                        <button 
-                                            className="copy-btn"
-                                            onClick={(e) => {
-                                                e.stopPropagation();
-                                                copySingleCode(code.emoji, code.name, code.description);
-                                            }}
-                                            title="Copy this code"
+                                    return (
+                                        <div 
+                                            key={key}
+                                            className={`code-item ${isSelected ? 'selected' : ''}`}
+                                            onClick={() => toggleCode(category, originalIndex)}
                                         >
-                                            📋
-                                        </button>
-                                    </div>
-                                );
-                            })}
+                                            <div className="code-emoji">{code.emoji}</div>
+                                            <div className="code-checkbox">
+                                                <input 
+                                                    type="checkbox" 
+                                                    checked={isSelected}
+                                                    onChange={() => {}}
+                                                />
+                                            </div>
+                                            <div className="code-content">
+                                                <div className="code-name">{code.name}</div>
+                                                <div className="code-description">{code.description}</div>
+                                            </div>
+                                            <button 
+                                                className="copy-btn"
+                                                onClick={(e) => {
+                                                    e.stopPropagation();
+                                                    copySingleCode(code.emoji);
+                                                }}
+                                                title="Copy this code"
+                                            >
+                                                📋
+                                            </button>
+                                        </div>
+                                    );
+                                })}
+                            </div>
                         </div>
+                    ))
+                ) : (
+                    <div className="no-results">
+                        <p>No codes match your search. Try different keywords!</p>
                     </div>
-                ))}
+                )}
             </div>
         </div>
     );
