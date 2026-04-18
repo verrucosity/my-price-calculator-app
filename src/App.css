@@ -863,6 +863,44 @@ button:hover {
   flex-direction: column;
 }
 
+.input-label-with-unit {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.input-label-with-unit label {
+  color: #2a5934;
+  font-weight: 600;
+  font-size: 0.95em;
+  margin: 0;
+}
+
+.unit-select {
+  padding: 6px 10px;
+  border: 2px solid #89a47f;
+  background: white;
+  color: #2a5934;
+  border-radius: 5px;
+  font-size: 0.85em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-height: 30px;
+}
+
+.unit-select:hover {
+  border-color: #2a5934;
+  background-color: #f0f8f3;
+}
+
+.unit-select:focus {
+  outline: none;
+  border-color: #2a5934;
+  box-shadow: 0 0 5px rgba(42, 89, 52, 0.3);
+}
+
 .input-group label {
   color: #2a5934;
   font-weight: 600;

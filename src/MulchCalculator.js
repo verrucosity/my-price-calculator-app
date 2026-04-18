@@ -4,7 +4,9 @@ const MulchCalculator = () => {
     const [length, setLength] = useState('');
     const [width, setWidth] = useState('');
     const [depth, setDepth] = useState('');
-    const [unit, setUnit] = useState('inches');
+    const [lengthUnit, setLengthUnit] = useState('inches');
+    const [widthUnit, setWidthUnit] = useState('inches');
+    const [depthUnit, setDepthUnit] = useState('inches');
 
     // Bag sizes in cubic feet
     const bagSizes = [
@@ -28,10 +30,14 @@ const MulchCalculator = () => {
             return null;
         }
 
-        // Convert to feet if in inches
-        if (unit === 'inches') {
+        // Convert each measurement to feet based on its own unit
+        if (lengthUnit === 'inches') {
             l = l / 12;
+        }
+        if (widthUnit === 'inches') {
             w = w / 12;
+        }
+        if (depthUnit === 'inches') {
             d = d / 12;
         }
 
@@ -59,7 +65,9 @@ const MulchCalculator = () => {
         setLength('');
         setWidth('');
         setDepth('');
-        setUnit('inches');
+        setLengthUnit('inches');
+        setWidthUnit('inches');
+        setDepthUnit('inches');
     };
 
     return (
@@ -69,61 +77,67 @@ const MulchCalculator = () => {
 
             <div className="calc-section">
                 <h2>Measurements</h2>
-                
-                <div className="unit-selector">
-                    <label>Unit of Measurement:</label>
-                    <div className="radio-group">
-                        <label>
-                            <input 
-                                type="radio" 
-                                value="feet" 
-                                checked={unit === 'feet'}
-                                onChange={(e) => setUnit(e.target.value)}
-                            />
-                            Feet
-                        </label>
-                        <label>
-                            <input 
-                                type="radio" 
-                                value="inches" 
-                                checked={unit === 'inches'}
-                                onChange={(e) => setUnit(e.target.value)}
-                            />
-                            Inches
-                        </label>
-                    </div>
-                </div>
 
                 <div className="measurement-inputs">
                     <div className="input-group">
-                        <label>Length ({unit === 'feet' ? 'Feet' : 'Inches'}) *</label>
+                        <div className="input-label-with-unit">
+                            <label>Length *</label>
+                            <select 
+                                value={lengthUnit} 
+                                onChange={(e) => setLengthUnit(e.target.value)}
+                                className="unit-select"
+                            >
+                                <option value="inches">Inches</option>
+                                <option value="feet">Feet</option>
+                            </select>
+                        </div>
                         <input
                             type="number"
                             value={length}
                             onChange={(e) => setLength(e.target.value)}
-                            placeholder="Enter length"
+                            placeholder={lengthUnit === 'feet' ? 'Enter length in feet' : 'Enter length in inches'}
                             min="0"
                         />
                     </div>
 
                     <div className="input-group">
-                        <label>Width ({unit === 'feet' ? 'Feet' : 'Inches'}) *</label>
+                        <div className="input-label-with-unit">
+                            <label>Width *</label>
+                            <select 
+                                value={widthUnit} 
+                                onChange={(e) => setWidthUnit(e.target.value)}
+                                className="unit-select"
+                            >
+                                <option value="inches">Inches</option>
+                                <option value="feet">Feet</option>
+                            </select>
+                        </div>
                         <input
                             type="number"
                             value={width}
                             onChange={(e) => setWidth(e.target.value)}
-                            placeholder="Enter width"
+                            placeholder={widthUnit === 'feet' ? 'Enter width in feet' : 'Enter width in inches'}
                             min="0"
                         />
                     </div>
 
                     <div className="input-group">
-                        <label>Depth ({unit === 'feet' ? 'Feet' : 'Inches'}) *</label>
+                        <div className="input-label-with-unit">
+                            <label>Depth *</label>
+                            <select 
+                                value={depthUnit} 
+                                onChange={(e) => setDepthUnit(e.target.value)}
+                                className="unit-select"
+                            >
+                                <option value="inches">Inches</option>
+                                <option value="feet">Feet</option>
+                            </select>
+                        </div>
                         <input
                             type="number"
                             value={depth}
                             onChange={(e) => setDepth(e.target.value)}
-                            placeholder={unit === 'feet' ? 'Enter depth (recommend 0.17-0.25 feet)' : 'Enter depth (recommend 2-3 inches)'}
+                            placeholder={depthUnit === 'feet' ? 'Enter depth in feet (recommend 0.17-0.25)' : 'Enter depth in inches (recommend 2-3)'}
                             min="0"
                         />
                     </div>
