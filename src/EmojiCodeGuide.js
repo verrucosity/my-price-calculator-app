@@ -62,7 +62,7 @@ const EmojiCodeGuide = () => {
         ]
     };
 
-    const [selectedCategories, setSelectedCategories] = useState(new Set(Object.keys(codeCategories)));
+    const [selectedCategory, setSelectedCategory] = useState('All Categories');
 
     const toggleCode = (category, index) => {
         const key = `${category}-${index}`;
@@ -110,20 +110,10 @@ const EmojiCodeGuide = () => {
         setSelectedCodes({});
     };
 
-    const toggleCategory = (category) => {
-        const newCategories = new Set(selectedCategories);
-        if (newCategories.has(category)) {
-            newCategories.delete(category);
-        } else {
-            newCategories.add(category);
-        }
-        setSelectedCategories(newCategories);
-    };
-
     const selectedCount = Object.values(selectedCodes).filter(Boolean).length;
 
     const filteredCategories = Object.entries(codeCategories)
-        .filter(([category]) => selectedCategories.has(category))
+        .filter(([category]) => selectedCategory === 'All Categories' || category === selectedCategory)
         .map(([category, codes]) => {
             const filteredCodes = codes.filter(code =>
                 searchTerm === '' ||
@@ -151,18 +141,20 @@ const EmojiCodeGuide = () => {
             </div>
 
             <div className="category-filters">
-                <div className="filter-label">Categories:</div>
-                <div className="filter-buttons">
+                <label htmlFor="category-dropdown" className="filter-label">Filter by Category:</label>
+                <select
+                    id="category-dropdown"
+                    value={selectedCategory}
+                    onChange={(e) => setSelectedCategory(e.target.value)}
+                    className="category-dropdown"
+                >
+                    <option value="All Categories">All Categories</option>
                     {Object.keys(codeCategories).map(category => (
-                        <button
-                            key={category}
-                            className={`category-btn ${selectedCategories.has(category) ? 'active' : ''}`}
-                            onClick={() => toggleCategory(category)}
-                        >
+                        <option key={category} value={category}>
                             {category}
-                        </button>
+                        </option>
                     ))}
-                </div>
+                </select>
             </div>
 
             <div className="code-controls">
