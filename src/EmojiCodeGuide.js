@@ -57,6 +57,7 @@ const EmojiCodeGuide = () => {
             { emoji: '✅', name: 'Green Check Mark', description: 'Job or task is done; though the work might be complete, it might still need to be billed (🏛️ AR account) or Paid (💰 cash, check or credit card).' },
             { emoji: '💰', name: 'Money Bag', description: 'Paid.' },
             { emoji: '💵', name: 'Cash', description: 'Deposit received for order.' },
+            { emoji: '📝', name: 'Contract', description: 'Contracted clients.' },
             { emoji: '🏛️', name: 'Classical Building', description: '(House Account) Billed to AR.' },
             { emoji: '❌', name: 'Cross Mark', description: 'Cancelled job/event.' }
         ]
